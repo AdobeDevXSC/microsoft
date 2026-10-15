@@ -3,13 +3,39 @@
  * Collapsible questions and answers with Expand all / Collapse all controls.
  * One row per item: question cell | answer cell (rich text).
  * A single-cell row uses its first element as the question and the rest as the answer.
+ * A heading in the question cell becomes the question itself (summary > h3), so it stays
+ * in the document outline; plain text is wrapped in a span instead.
  * Also publishes the Q&A as schema.org FAQPage JSON-LD in <head> (one script per page).
  */
 
 const JSON_LD_ID = 'accordion-faq-jsonld';
+const HEADINGS = 'h1, h2, h3, h4, h5, h6';
 
 function normalize(text) {
   return text.replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Builds the question element shown inside <summary>.
+ * Uses an authored heading as-is; any other content beside it moves to the answer,
+ * since a heading must not be nested in phrasing content.
+ * @param {{question: Node[], answer: Node[]}} item
+ * @returns {Element}
+ */
+function buildQuestion(item) {
+  const nodes = item.question.filter((node) => node.nodeType === Node.ELEMENT_NODE
+    || node.textContent.trim());
+  const heading = nodes.find((node) => node.nodeType === Node.ELEMENT_NODE
+    && node.matches(HEADINGS));
+  if (heading) {
+    heading.classList.add('accordion-faq-item-question');
+    item.answer.unshift(...nodes.filter((node) => node !== heading));
+    return heading;
+  }
+  const label = document.createElement('span');
+  label.className = 'accordion-faq-item-question';
+  label.append(...nodes);
+  return label;
 }
 
 /**
@@ -104,9 +130,7 @@ export default function decorate(block) {
     details.className = 'accordion-faq-item';
     const summary = document.createElement('summary');
     summary.className = 'accordion-faq-item-label';
-    const label = document.createElement('span');
-    label.className = 'accordion-faq-item-question';
-    label.append(...item.question);
+    const label = buildQuestion(item);
     summary.append(label);
     const body = document.createElement('div');
     body.className = 'accordion-faq-item-body';

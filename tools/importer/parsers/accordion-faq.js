@@ -5,7 +5,7 @@
  * Source: https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra
  * Instance selector: [id="Surface Laptop Pro FAQs"] .inview-root.contents
  *
- * Output (blocks/accordion-faq/README.md): one row per item: question | answer rich text.
+ * Output (blocks/accordion-faq/README.md): one row per item: question (h3) | answer rich text.
  *
  * Source structure (validated): div#…-accordion > div x21 > h2 > button > span (question).
  * Answer panels (div[role="region"]) are only rendered when an item is opened, so answers
@@ -276,7 +276,10 @@ export default function parse(element, { document }) {
       if (!jsonLd) jsonLd = answersFromJsonLd(document);
       answer = jsonLd.get(key)?.answer || [];
     }
-    cells.push([question, answer.length ? answer : '']);
+    // Question cell as an h3 (source items are headings; the section's h2 sits above the block)
+    const questionHeading = document.createElement('h3');
+    questionHeading.textContent = question;
+    cells.push([questionHeading, answer.length ? answer : '']);
   });
 
   if (!cells.length) {

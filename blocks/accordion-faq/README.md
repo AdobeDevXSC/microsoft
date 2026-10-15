@@ -20,6 +20,9 @@ N/A (Document Authoring project)
 
 - One row per question: question cell | answer cell (paragraphs, lists, bold, links). A
   single-cell row uses its first paragraph/heading as the question and the rest as the answer.
+- Author questions as headings (Heading 3 under the section's Heading 2) so they appear in the
+  page outline; the heading becomes the toggle label (`summary > h3`). Plain-text questions still
+  work and render inside a span.
   Empty rows are dropped.
 - Built on native `<details>`/`<summary>`, so items are keyboard operable and work without JS
   styling. All items start collapsed.

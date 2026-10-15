@@ -153,7 +153,17 @@ main .section.accordion-faq-container .default-content-wrapper:has(+ .accordion-
   transform: rotate(45deg);
 }
 
-.accordion-faq .accordion-faq-item-question > :only-child {
+/* question: an authored heading (summary > h3) or a span fallback; type comes from the summary,
+   not the global heading scale (scroll-margin is kept so deep links clear the sticky nav) */
+.accordion-faq .accordion-faq-item-question {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+/* span fallback: a lone authored paragraph */
+.accordion-faq span.accordion-faq-item-question > :only-child {
   margin: 0;
   font: inherit;
 }
