@@ -1,0 +1,116 @@
+/* the block's own section sticks to the top of the page (below the fixed mobile header) */
+main > .section.section-nav-container {
+  position: sticky;
+  top: var(--nav-height, 64px);
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+/* full-width bar: drop the section content width / gutters */
+main > .section.section-nav-container > .section-nav-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* the open mobile menu (fixed header) must not be covered by the sticky bar */
+:root:has(header nav[aria-expanded="true"]) main > .section.section-nav-container {
+  visibility: hidden;
+}
+
+.section-nav {
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  line-height: 20px;
+}
+
+.section-nav .section-nav-list {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 28px;
+  overflow-x: auto;
+  list-style: none;
+  white-space: nowrap;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 8px;
+  overscroll-behavior-x: contain;
+}
+
+.section-nav .section-nav-list::-webkit-scrollbar {
+  display: none;
+}
+
+.section-nav .section-nav-list li {
+  flex-shrink: 0;
+}
+
+.section-nav a.section-nav-link:any-link {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  color: var(--text-muted-color);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* active-chapter underline: gradient bar on the bottom edge of the nav, grows from the start */
+.section-nav a.section-nav-link::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -12px;
+  height: 3px;
+  background-image: linear-gradient(to right in oklab, #34bffb 0%, #0538c7 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-nav a.section-nav-link:hover {
+  color: var(--text-color);
+}
+
+.section-nav a.section-nav-link:hover::after,
+.section-nav a.section-nav-link[aria-current="true"]::after {
+  transform: scaleX(1);
+}
+
+.section-nav a.section-nav-link[aria-current="true"] {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.section-nav a.section-nav-link:focus-visible {
+  outline: 1px solid currentcolor;
+  outline-offset: 4px;
+}
+
+.section-nav a.section-nav-link:dir(rtl)::after {
+  background-image: linear-gradient(to left in oklab, #34bffb 0%, #0538c7 100%);
+  transform-origin: right center;
+}
+
+@media (width >= 900px) {
+  main > .section.section-nav-container {
+    top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-nav .section-nav-list {
+    scroll-behavior: auto;
+  }
+
+  .section-nav a.section-nav-link,
+  .section-nav a.section-nav-link::after {
+    transition: none;
+  }
+}

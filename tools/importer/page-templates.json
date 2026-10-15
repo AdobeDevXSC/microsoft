@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "surface-product-page",
+      "description": "Surface device marketing page split into a main page plus lazy-loaded chapter fragments",
+      "urls": [
+        "https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra"
+      ],
+      "blocks": [
+        {
+          "name": "hero-product",
+          "instances": [
+            "#r-product-hero"
+          ]
+        },
+        {
+          "name": "section-nav",
+          "instances": [
+            "#chapter-module > section > div:nth-of-type(2)"
+          ]
+        },
+        {
+          "name": "buy-bar",
+          "instances": [
+            "#primaryArea > div:nth-of-type(5)"
+          ]
+        },
+        {
+          "name": "scrolling-slides-media",
+          "instances": [
+            "[id=\"#performance\"] .container-fluid"
+          ]
+        },
+        {
+          "name": "cards-feature-media",
+          "instances": [
+            "[id=\"Feature grid\"]"
+          ]
+        },
+        {
+          "name": "tabs-media",
+          "instances": [
+            "[id=\"#display\"] .relative.mt-10"
+          ]
+        },
+        {
+          "name": "columns-features",
+          "instances": [
+            "[id=\"PARA WITH COLUMNS\"]"
+          ]
+        },
+        {
+          "name": "scrolling-slides-story",
+          "instances": [
+            "[id=\"PANEL 6: RUN LOCAL. RUN FREE\"]"
+          ]
+        },
+        {
+          "name": "columns-security",
+          "instances": [
+            "[id=\"Surface Pro Ultra - Security That Means Business - Generic Columns\"]"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            "[id=\"#compare\"] .grid"
+          ]
+        },
+        {
+          "name": "table-specs",
+          "instances": [
+            "[id=\"techspecs\"]"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            "[id=\"Surface Laptop Pro FAQs\"] .inview-root.contents"
+          ]
+        },
+        {
+          "name": "footnotes",
+          "instances": [
+            "#r-page-footnotes"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": [
+            "#r-product-hero"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-product"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Inner craft / pinned scrolling slides",
+          "selector": [
+            "[id=\"#performance\"]"
+          ],
+          "style": "dark",
+          "blocks": [
+            "scrolling-slides-media"
+          ],
+          "defaultContent": [
+            "[id=\"#performance\"] .container.text-center h2"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Feature media cards",
+          "selector": [
+            "[id=\"Feature grid\"]"
+          ],
+          "style": "dark",
+          "blocks": [
+            "cards-feature-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Shines in any setting (tabbed media)",
+          "selector": [
+            "[id=\"#display\"]"
+          ],
+          "style": "dark",
+          "blocks": [
+            "tabs-media"
+          ],
+          "defaultContent": [
+            "[id=\"#display\"] .container"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Display feature list",
+          "selector": [
+            "[id=\"PARA WITH COLUMNS\"]"
+          ],
+          "style": "dark",
+          "blocks": [
+            "columns-features"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Run local. Run free. intro",
+          "selector": [
+            "[id=\"ultra-group-panel-7\"]"
+          ],
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            "[id=\"ultra-group-panel-7\"]"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Build / Create / Analyze pinned storytelling",
+          "selector": [
+            "[id=\"PANEL 6: RUN LOCAL. RUN FREE\"]"
+          ],
+          "style": null,
+          "blocks": [
+            "scrolling-slides-story"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Yours for the long haul",
+          "selector": [
+            "[id=\"ultra-group-panel-7-accordion-2\"]"
+          ],
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            "[id=\"ultra-group-panel-7-accordion-2\"]"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Security that means business",
+          "selector": [
+            "[id=\"#security\"]",
+            "[id=\"Surface Pro Ultra - Security That Means Business - Generic Columns\"]",
+            "[id=\"ultra-security-business\"]"
+          ],
+          "style": "dark",
+          "blocks": [
+            "columns-security"
+          ],
+          "defaultContent": [
+            "[id=\"#security\"]",
+            "[id=\"ultra-security-business\"]"
+          ]
+        },
+        {
+          "id": "section-10",
+          "name": "Explore every level of Surface",
+          "selector": [
+            "[id=\"#compare\"]"
+          ],
+          "style": "dark",
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": [
+            "[id=\"#compare\"] .max-w-2xl h2"
+          ]
+        },
+        {
+          "id": "section-11",
+          "name": "See full specs CTA",
+          "selector": [
+            "[id=\"techspecs\"]"
+          ],
+          "style": "dark",
+          "blocks": [
+            "table-specs"
+          ],
+          "defaultContent": [
+            "[id=\"techspecs\"] h2, [id=\"techspecs\"] h3, [id=\"techspecs\"] p"
+          ]
+        },
+        {
+          "id": "section-12",
+          "name": "FAQ",
+          "selector": [
+            "[id=\"Surface Laptop Pro FAQs\"]"
+          ],
+          "style": "light",
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            "[id=\"Surface Laptop Pro FAQs\"] .mb-15"
+          ]
+        },
+        {
+          "id": "section-13",
+          "name": "Legal footnotes / terms",
+          "selector": [
+            "#r-page-footnotes"
+          ],
+          "style": "dark",
+          "blocks": [
+            "footnotes"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

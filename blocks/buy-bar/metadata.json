@@ -1,0 +1,25 @@
+{
+  "variantName": "buy-bar",
+  "baseBlock": "buy-bar",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "floating-buy-cta",
+    "imagePattern": "noimg",
+    "structure": "name + price + cta"
+  },
+  "contentPattern": {
+    "structure": "single row: product name | price | Pre-order link",
+    "imagePattern": "noimg",
+    "density": "compact",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/surface/devices/surface-laptop-ultra"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["buy-bar"]
+}

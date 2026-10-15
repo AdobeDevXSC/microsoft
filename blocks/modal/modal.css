@@ -1,0 +1,143 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+/* full-bleed sheet: starts below the top 100px on mobile, covers the viewport on desktop */
+.modal dialog {
+  overscroll-behavior: none;
+  box-sizing: border-box;
+  position: fixed;
+  inset: 100px 0 0;
+  width: auto;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+  overflow: hidden;
+}
+
+.modal dialog::backdrop {
+  background-color: transparent;
+}
+
+.modal dialog .modal-content {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 60px 20px 100px;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+}
+
+.modal dialog .modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* close button: accent circle, bottom-centered on mobile */
+.modal dialog .close-button {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  z-index: 1;
+  box-sizing: content-box;
+  width: 10.6667px;
+  height: 10.6667px;
+  margin: 0;
+  padding: 16px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition: background-color 0.3s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.modal dialog .close-button::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill-rule='evenodd' d='M7.62 1.09 4.7 3.99l2.9 2.92-.7.7L4 4.72 1.09 7.6l-.7-.7L3.28 4 .4 1.09l.7-.7L4 3.29 6.92.4l.7.7Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.3s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.modal dialog .close-button:hover {
+  background: var(--accent-hover-color);
+}
+
+.modal dialog .close-button:hover::before {
+  transform: rotate(90deg);
+}
+
+.modal dialog .close-button:focus-visible {
+  outline: 1px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.modal dialog .section {
+  padding: 0;
+}
+
+/* sheet heading + intro, centered above the content */
+.modal dialog .default-content-wrapper {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.modal dialog .default-content-wrapper h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.modal dialog .default-content-wrapper p {
+  max-width: none;
+  margin: 28px 0 0;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+.modal dialog .metadata-wrapper {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .modal dialog {
+    inset: 0;
+  }
+
+  .modal dialog .modal-content {
+    padding: 60px max(28px, (100% - var(--content-max-width)) / 2) 100px;
+  }
+
+  .modal dialog .close-button {
+    inset: 40px 40px auto auto;
+    transform: none;
+  }
+
+  .modal dialog .default-content-wrapper {
+    max-width: 592px;
+    margin: 0 auto 80px;
+  }
+
+  .modal dialog .default-content-wrapper h2 {
+    font-size: 48px;
+  }
+
+  .modal dialog .default-content-wrapper p {
+    font-size: 24px;
+  }
+}

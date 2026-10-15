@@ -1,0 +1,151 @@
+/* bento grid of feature cards: text on top, media filling the rest of the card */
+.cards-feature-media > ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-feature-media .cards-feature-media-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  padding: 8px;
+  border-radius: 24px;
+  background-color: var(--background-color);
+}
+
+/* hairline border drawn above the media so it stays crisp on the rounded corners */
+.cards-feature-media .cards-feature-media-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.cards-feature-media .cards-feature-media-card-body {
+  min-width: 0;
+  padding: 16px;
+}
+
+.cards-feature-media .cards-feature-media-card-media {
+  position: relative;
+  flex: none;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* media is absolutely filled so its intrinsic size never drives the card height */
+.cards-feature-media .cards-feature-media-card-media > picture,
+.cards-feature-media .cards-feature-media-card-media > img,
+.cards-feature-media .cards-feature-media-card-media > p,
+.cards-feature-media .cards-feature-media-card-media .video-media {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+.cards-feature-media .cards-feature-media-card-media picture,
+.cards-feature-media .cards-feature-media-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards-feature-media .cards-feature-media-card-body p {
+  margin: 0;
+}
+
+.cards-feature-media .cards-feature-media-card-body p + p {
+  margin-top: 8px;
+}
+
+/* video toggle: large frosted button centred on the media, hidden while playing */
+.cards-feature-media .video-media .video-toggle {
+  inset: 50% auto auto 50%;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  border: 0;
+  background-color: rgb(255 255 255 / 10%);
+  background-size: 22px;
+  backdrop-filter: blur(12px);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.cards-feature-media .video-media .video-toggle:hover {
+  background-color: rgb(255 255 255 / 20%);
+}
+
+.cards-feature-media .video-media .video-toggle[data-state="playing"] {
+  opacity: 0;
+}
+
+.cards-feature-media .video-media:hover .video-toggle,
+.cards-feature-media .video-media .video-toggle:focus-visible {
+  opacity: 1;
+}
+
+/* third card: text and media side by side */
+.cards-feature-media .cards-feature-media-card:nth-child(3) {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.cards-feature-media .cards-feature-media-card:nth-child(3) .cards-feature-media-card-body {
+  flex: 1 1 0;
+}
+
+.cards-feature-media .cards-feature-media-card:nth-child(3) .cards-feature-media-card-media {
+  flex: none;
+  width: 50%;
+  aspect-ratio: auto;
+}
+
+@media (width >= 600px) {
+  .cards-feature-media > ul {
+    grid-auto-rows: 320px;
+    gap: 16px;
+  }
+
+  .cards-feature-media .cards-feature-media-card-media {
+    flex: 1 1 auto;
+    min-height: 120px;
+    aspect-ratio: auto;
+  }
+
+  .cards-feature-media .cards-feature-media-card:nth-child(3) .cards-feature-media-card-media {
+    flex: none;
+    min-height: 0;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-feature-media > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(211px, auto);
+  }
+
+  .cards-feature-media .cards-feature-media-card {
+    grid-column: span 2;
+  }
+
+  /* bento: tall first card beside a taller second card stacked over the horizontal third */
+  .cards-feature-media .cards-feature-media-card:nth-child(1) {
+    grid-row: span 3;
+  }
+
+  .cards-feature-media .cards-feature-media-card:nth-child(2) {
+    grid-row: span 2;
+  }
+}

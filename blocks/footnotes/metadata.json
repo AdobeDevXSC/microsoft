@@ -1,0 +1,25 @@
+{
+  "variantName": "footnotes",
+  "baseBlock": "footnotes",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "legal-footnotes",
+    "imagePattern": "noimg",
+    "structure": "marker + text"
+  },
+  "contentPattern": {
+    "structure": "one row per footnote: cell1 = marker (*, 1..32) | cell2 = rich text. Alternative: authored as an ordered list with the block adding ids",
+    "imagePattern": "noimg",
+    "density": "compact",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/fragments/surface-laptop-ultra/legal"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["footnotes"]
+}

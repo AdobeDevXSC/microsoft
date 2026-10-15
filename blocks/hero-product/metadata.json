@@ -1,0 +1,25 @@
+{
+  "variantName": "hero-product",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "product-hero",
+    "imagePattern": "full-bleed-video",
+    "structure": "promo link + h1 + display heading + text + price + cta"
+  },
+  "contentPattern": {
+    "structure": "row1: poster image + desktop MP4 link + mobile MP4 link | row2: promo link | row3: H1, display line (p strong or H2), description, product name, price, Pre-order link",
+    "imagePattern": "full-bleed-video",
+    "density": "spacious",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/surface/devices/surface-laptop-ultra"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["hero-product"]
+}

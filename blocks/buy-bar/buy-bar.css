@@ -1,0 +1,147 @@
+/* the bar is fixed, so its wrapper / a section holding only the bar takes no room */
+main > .section.buy-bar-container > .buy-bar-wrapper {
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+main > .section.buy-bar-container:has(> .buy-bar-wrapper:only-child) {
+  margin: 0;
+  padding: 0;
+}
+
+/* fixed floating pill, hidden (and inert, see JS) until revealed; never part of the page flow */
+.buy-bar {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+  max-width: calc(100% - 32px);
+  margin: 0;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 22.4px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0, 0, 0.2, 1), visibility 0s 0.5s;
+}
+
+.buy-bar.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* the open mobile menu (fixed header) must not be covered by the bar */
+:root:has(header nav[aria-expanded="true"]) .buy-bar.is-visible {
+  visibility: hidden;
+}
+
+.buy-bar .buy-bar-bar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  border-radius: 9999px;
+  background-color: rgb(0 0 0 / 40%);
+  box-shadow:
+    0 78px 31px 0 rgb(0 0 0 / 1%),
+    0 44px 26px 0 rgb(0 0 0 / 2%),
+    0 19px 19px 0 rgb(0 0 0 / 3%),
+    0 5px 11px 0 rgb(0 0 0 / 4%);
+  backdrop-filter: blur(12px);
+}
+
+.buy-bar .buy-bar-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 24px;
+}
+
+.buy-bar .buy-bar-info p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.buy-bar .buy-bar-name {
+  font-weight: 400;
+}
+
+.buy-bar .buy-bar-price {
+  font-size: var(--body-font-size-xs);
+}
+
+.buy-bar a.buy-bar-cta:any-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 2px 8px 2px 0;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s cubic-bezier(0.8, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.buy-bar a.buy-bar-cta:hover,
+.buy-bar a.buy-bar-cta:focus-visible {
+  background-color: var(--accent-hover-color);
+  color: #fff;
+}
+
+.buy-bar a.buy-bar-cta:focus-visible {
+  outline: 1px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+@media (width >= 900px) {
+  .buy-bar {
+    right: 24px;
+    bottom: 24px;
+    left: auto;
+    max-width: none;
+  }
+
+  .buy-bar .buy-bar-bar {
+    gap: 60px;
+    width: auto;
+  }
+
+  .buy-bar .buy-bar-price {
+    font-size: var(--body-font-size-m);
+  }
+
+  .buy-bar a.buy-bar-cta:any-link {
+    margin: 0;
+    padding: 16px 32px;
+    line-height: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buy-bar,
+  .buy-bar.is-visible,
+  .buy-bar a.buy-bar-cta:any-link {
+    transition: none;
+  }
+}

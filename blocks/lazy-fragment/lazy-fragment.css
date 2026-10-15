@@ -1,0 +1,8 @@
+.lazy-fragment-pending {
+  min-height: var(--lazy-fragment-height, 100vh);
+  contain: layout;
+}
+
+.lazy-fragment {
+  min-height: inherit;
+}

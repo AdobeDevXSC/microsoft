@@ -1,0 +1,91 @@
+/*
+ * Source container is wider than the EDS section content box: it is
+ * min(viewport, 1440px) minus 8px gutters (mobile) / 48px gutters (desktop).
+ * Negative inline margins widen the block to that box, centred on the section.
+ */
+.columns-features {
+  margin-inline: calc(50% - 50vw + 8px);
+}
+
+/* mobile first: one column */
+.columns-features .columns-features-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.columns-features .columns-features-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  padding: 0 32px 0 8px;
+}
+
+.columns-features .columns-features-item > * {
+  margin: 0;
+}
+
+.columns-features .columns-features-title {
+  font-family: var(--display-font-family);
+  font-size: 20px;
+  font-weight: var(--body-font-weight);
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.columns-features .columns-features-item > :not(.columns-features-title) {
+  color: color-mix(in srgb, currentcolor 70%, transparent);
+  font-size: var(--body-font-size-m);
+  line-height: 1.4;
+}
+
+.columns-features sup {
+  position: relative;
+  top: -6px;
+  vertical-align: baseline;
+  font-size: var(--body-font-size-xs);
+  line-height: 0;
+}
+
+/* footnote refs: <a href="#footnote-N"><sup>N</sup></a> */
+.columns-features a:any-link {
+  color: inherit;
+}
+
+.columns-features a:hover {
+  color: var(--link-hover-color);
+}
+
+/* source puts the link inside the <sup>, so the underline sits under the raised number */
+.columns-features a:any-link:has(> sup) {
+  text-decoration: none;
+}
+
+.columns-features a:any-link > sup {
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .columns-features .columns-features-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 900px) {
+  .columns-features {
+    margin-inline: calc(50% - min(50vw, 720px) + 48px);
+  }
+
+  .columns-features .columns-features-list {
+    grid-template-columns: repeat(var(--columns-features-count, 3), minmax(0, 1fr));
+  }
+
+  .columns-features .columns-features-item {
+    padding-inline-end: 64px;
+  }
+}

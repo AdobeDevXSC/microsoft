@@ -1,0 +1,25 @@
+{
+  "variantName": "table-specs",
+  "baseBlock": "table",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light-on-dark-modal",
+    "density": "compact",
+    "purpose": "tech-specs",
+    "imagePattern": "noimg",
+    "structure": "label + values"
+  },
+  "contentPattern": {
+    "structure": "2 columns per row: category label | values (paragraphs / list with <sup> footnote links)",
+    "imagePattern": "noimg",
+    "density": "compact",
+    "colorScheme": "light-on-dark-modal"
+  },
+  "usage": {
+    "pagesUsing": ["/fragments/surface-laptop-ultra/specs"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["table-specs"]
+}

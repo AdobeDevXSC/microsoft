@@ -1,0 +1,25 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "faq",
+    "imagePattern": "noimg",
+    "structure": "question + answer"
+  },
+  "contentPattern": {
+    "structure": "one row per item: cell1 = question | cell2 = answer rich text",
+    "imagePattern": "noimg",
+    "density": "compact",
+    "colorScheme": "light"
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/surface/devices/surface-laptop-ultra"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["accordion-faq"]
+}

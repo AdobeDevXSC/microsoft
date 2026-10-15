@@ -1,0 +1,25 @@
+{
+  "variantName": "scrolling-slides-media",
+  "baseBlock": "scrolling-slides",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "pinned-feature-slides",
+    "imagePattern": "contained-rounded-video",
+    "structure": "video + heading + text"
+  },
+  "contentPattern": {
+    "structure": "one row per slide: cell1 = poster image + desktop MP4 link + mobile MP4 link | cell2 = H2 + paragraph",
+    "imagePattern": "contained-rounded-video",
+    "density": "spacious",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/fragments/surface-laptop-ultra/performance"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["scrolling-slides-media"]
+}

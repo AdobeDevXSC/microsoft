@@ -1,0 +1,114 @@
+/* section around the legal card (source: py-40 = 160px top and bottom) */
+main > .section.footnotes-container {
+  padding-block: 160px;
+}
+
+/* card */
+.footnotes {
+  box-sizing: border-box;
+  max-width: 890px;
+  margin-inline: auto;
+  padding: 32px;
+  border-radius: 24px;
+  background-color: #141414;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 1.4;
+}
+
+/*
+ * The "Screens simulated..." disclaimer is default content right before the block.
+ * It joins the top of the card (8px gap, like the source flex column).
+ */
+main .footnotes-container > .default-content-wrapper:has(+ .footnotes-wrapper) {
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  max-width: 890px;
+  margin-inline: auto;
+  padding: 32px 32px 0;
+  border-radius: 24px 24px 0 0;
+  background-color: #141414;
+  font-size: var(--body-font-size-m);
+  line-height: 1.4;
+}
+
+main .footnotes-container > .default-content-wrapper:has(+ .footnotes-wrapper) > * {
+  margin: 0;
+}
+
+main .footnotes-container > .default-content-wrapper:has(+ .footnotes-wrapper) > * + * {
+  margin-top: 8px;
+}
+
+main .footnotes-container > .default-content-wrapper + .footnotes-wrapper .footnotes {
+  padding-top: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* list: one shared marker column for every note */
+.footnotes .footnotes-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footnotes .footnotes-item {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  scroll-margin-top: calc(var(--nav-height) + var(--section-nav-height) + 16px);
+}
+
+.footnotes .footnotes-item:focus {
+  outline: none;
+}
+
+/* highlight the note a #footnote-N link landed on */
+.footnotes .footnotes-item:target {
+  border-radius: 4px;
+  background-color: rgb(255 255 255 / 10%);
+  box-shadow: 0 0 0 4px rgb(255 255 255 / 10%);
+}
+
+.footnotes .footnotes-item:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.footnotes a.footnotes-marker:any-link {
+  color: var(--text-color);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footnotes a.footnotes-marker:hover {
+  text-decoration: underline;
+}
+
+.footnotes .footnotes-text {
+  min-width: 0;
+}
+
+.footnotes .footnotes-text p {
+  margin: 0;
+}
+
+.footnotes .footnotes-text strong {
+  font-weight: 700;
+}
+
+.footnotes .footnotes-text a:any-link {
+  color: var(--text-color);
+  text-underline-offset: 1px;
+}
+
+@media (width >= 900px) {
+  main .footnotes-container > .default-content-wrapper:has(+ .footnotes-wrapper) {
+    width: calc(100% - 80px);
+  }
+}

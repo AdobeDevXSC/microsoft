@@ -1,0 +1,25 @@
+{
+  "variantName": "scrolling-slides-story",
+  "baseBlock": "scrolling-slides",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "pinned-storytelling",
+    "imagePattern": "full-bleed-video",
+    "structure": "video + expandable heading + text"
+  },
+  "contentPattern": {
+    "structure": "one row per story: cell1 = desktop MP4 link + mobile MP4 link | cell2 = H2 + paragraph",
+    "imagePattern": "full-bleed-video",
+    "density": "spacious",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/fragments/surface-laptop-ultra/local-ai"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["scrolling-slides-story"]
+}
