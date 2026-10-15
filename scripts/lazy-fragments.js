@@ -65,6 +65,29 @@ function load(entry) {
 }
 
 /**
+ * Keeps a scroll target aligned while freshly inserted content above it settles
+ * (blocks finishing layout, media sizing). Stops on user input or after a short while.
+ * @param {Element} target Scroll target
+ * @param {Object} options scrollIntoView options
+ */
+function holdScrollPosition(target, options) {
+  const main = document.querySelector('main');
+  if (!main || !window.ResizeObserver) return;
+  const events = ['wheel', 'touchstart', 'keydown', 'pointerdown'];
+  let ro;
+  let timer;
+  const stop = () => {
+    ro.disconnect();
+    clearTimeout(timer);
+    events.forEach((type) => window.removeEventListener(type, stop));
+  };
+  ro = new ResizeObserver(() => target.scrollIntoView(options));
+  ro.observe(main);
+  events.forEach((type) => window.addEventListener(type, stop, { passive: true, once: true }));
+  timer = setTimeout(stop, 2500);
+}
+
+/**
  * Loads every pending fragment above (and including) the element with the given id,
  * then scrolls to it. If the id is not on the page yet, fragments load in order
  * until it appears.
@@ -88,7 +111,10 @@ export async function loadUntil(id, options = {}) {
     }
   }
   target = document.getElementById(id);
-  target?.scrollIntoView(options);
+  if (target) {
+    target.scrollIntoView(options);
+    holdScrollPosition(target, options);
+  }
   return target;
 }
 
