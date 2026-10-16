@@ -1,0 +1,25 @@
+{
+  "variantName": "columns-features",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "feature-list",
+    "imagePattern": "noimg",
+    "structure": "heading + text"
+  },
+  "contentPattern": {
+    "structure": "one row, 3 cells: H3 + paragraph with <sup> footnote link",
+    "imagePattern": "noimg",
+    "density": "compact",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/fragments/surface-laptop-ultra/display"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["columns-features"]
+}

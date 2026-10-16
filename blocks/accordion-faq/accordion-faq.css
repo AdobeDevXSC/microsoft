@@ -1,0 +1,263 @@
+/* icons (paths from the source plus / minus SVGs), painted with currentcolor via mask */
+.accordion-faq {
+  --accordion-faq-plus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Cpath d='M6.33 0c.28 0 .5.22.5.5v5.33h5.34a.5.5 0 0 1 0 1H6.83v5.34a.5.5 0 0 1-1 0V6.83H.5a.5.5 0 0 1 0-1h5.33V.5c0-.28.23-.5.5-.5'/%3E%3C/svg%3E");
+  --accordion-faq-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 1'%3E%3Cpath d='M12.17 0a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1z'/%3E%3C/svg%3E");
+  --accordion-faq-ease: cubic-bezier(0.8, 0, 0.2, 1);
+  --accordion-faq-keyline: #e2e2e2;
+  --accordion-faq-answer-color: #1d1d1f;
+
+  max-width: 672px;
+  margin: 0 auto;
+}
+
+/* FAQ section: narrow centred column for the heading too, source section spacing */
+main > .section.accordion-faq-container {
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+main > .section.accordion-faq-container > .default-content-wrapper:has(+ .accordion-faq-wrapper) {
+  max-width: 672px;
+}
+
+main .section.accordion-faq-container .default-content-wrapper:has(+ .accordion-faq-wrapper) > :is(h2, h3):last-child {
+  margin-bottom: 24px;
+}
+
+/* expand all / collapse all */
+.accordion-faq .accordion-faq-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.accordion-faq .accordion-faq-controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: var(--body-font-size-m);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s var(--accordion-faq-ease), opacity 0.3s var(--accordion-faq-ease);
+}
+
+.accordion-faq .accordion-faq-controls button::after {
+  content: "";
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  background-color: currentcolor;
+  mask: var(--accordion-faq-plus) center / 13px 13px no-repeat;
+}
+
+.accordion-faq .accordion-faq-controls .accordion-faq-collapse-all::after {
+  mask-image: var(--accordion-faq-minus);
+  mask-size: 13px 1px;
+}
+
+.accordion-faq .accordion-faq-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.accordion-faq .accordion-faq-controls button:focus-visible {
+  outline: 1px dashed currentcolor;
+  outline-offset: 2px;
+}
+
+/* items */
+.accordion-faq .accordion-faq-item {
+  border-bottom: 1px solid var(--accordion-faq-keyline);
+}
+
+.accordion-faq .accordion-faq-item:first-child {
+  border-top: 1px solid var(--accordion-faq-keyline);
+}
+
+.accordion-faq .accordion-faq-item-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  font-size: var(--heading-font-size-m);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-faq .accordion-faq-item-label:focus-visible {
+  outline: 1px dashed currentcolor;
+  outline-offset: 2px;
+}
+
+.accordion-faq .accordion-faq-item-label::-webkit-details-marker {
+  display: none;
+}
+
+/* hover circle behind the icon */
+.accordion-faq .accordion-faq-item-label::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: scale(0);
+  transition: background-color 0.3s var(--accordion-faq-ease), transform 0.3s var(--accordion-faq-ease);
+}
+
+/* plus icon: 12px glyph in a 36px box */
+.accordion-faq .accordion-faq-item-label::after {
+  content: "";
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 36px;
+  height: 36px;
+  background-color: currentcolor;
+  mask: var(--accordion-faq-plus) center / 12px 12px no-repeat;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s var(--accordion-faq-ease);
+}
+
+@media (hover: hover) {
+  .accordion-faq .accordion-faq-item-label:hover::before {
+    background-color: var(--accent-color);
+    transform: scale(1);
+  }
+
+  .accordion-faq .accordion-faq-item-label:hover::after {
+    background-color: var(--light-color);
+    transform: rotate(-90deg);
+  }
+}
+
+.accordion-faq .accordion-faq-item[open] > .accordion-faq-item-label::after {
+  transform: rotate(45deg);
+}
+
+/* question: an authored heading (summary > h3) or a span fallback; type comes from the summary,
+   not the global heading scale (scroll-margin is kept so deep links clear the sticky nav) */
+.accordion-faq .accordion-faq-item-question {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+/* span fallback: a lone authored paragraph */
+.accordion-faq span.accordion-faq-item-question > :only-child {
+  margin: 0;
+  font: inherit;
+}
+
+/* answer */
+.accordion-faq .accordion-faq-item-body {
+  padding: 0 0 40px;
+  color: var(--accordion-faq-answer-color);
+  font-size: var(--body-font-size-m);
+  line-height: 1.4;
+}
+
+.accordion-faq .accordion-faq-item-body p {
+  margin: 0;
+}
+
+.accordion-faq .accordion-faq-item-body > * + p {
+  margin-top: 24px;
+}
+
+.accordion-faq .accordion-faq-item-body > p + :is(ul, ol) {
+  margin-top: 0;
+}
+
+.accordion-faq .accordion-faq-item-body > :is(ul, ol) + p {
+  margin-top: 16px;
+}
+
+.accordion-faq .accordion-faq-item-body :is(ul, ol) {
+  margin: 0;
+  padding-left: 40px;
+}
+
+.accordion-faq .accordion-faq-item-body li {
+  padding-bottom: 10px;
+}
+
+.accordion-faq .accordion-faq-item-body a:any-link {
+  color: inherit;
+  text-decoration: underline 1px;
+  text-underline-offset: 1px;
+}
+
+/* animate open/close where the browser can (source: grid-rows transition, 0.3s) */
+@supports (interpolate-size: allow-keywords) {
+  .accordion-faq .accordion-faq-item {
+    interpolate-size: allow-keywords;
+  }
+
+  .accordion-faq .accordion-faq-item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition: block-size 0.3s var(--accordion-faq-ease), content-visibility 0.3s allow-discrete;
+  }
+
+  .accordion-faq .accordion-faq-item[open]::details-content {
+    block-size: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-faq .accordion-faq-item::details-content,
+  .accordion-faq .accordion-faq-item-label::before,
+  .accordion-faq .accordion-faq-item-label::after,
+  .accordion-faq .accordion-faq-controls button {
+    transition: none;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.accordion-faq-container {
+    padding-top: var(--section-padding);
+  }
+
+  main .section.accordion-faq-container .default-content-wrapper:has(+ .accordion-faq-wrapper) > :is(h2, h3):last-child {
+    margin-bottom: 80px;
+  }
+
+  .accordion-faq .accordion-faq-controls {
+    justify-content: flex-end;
+    margin-bottom: 80px;
+  }
+
+  /* heading directly above: controls sit on the heading row, right-aligned (source header row) */
+  main .section .default-content-wrapper:has(> :is(h2, h3):last-child) + .accordion-faq-wrapper .accordion-faq {
+    position: relative;
+  }
+
+  main .section .default-content-wrapper:has(> :is(h2, h3):last-child) + .accordion-faq-wrapper .accordion-faq-controls {
+    position: absolute;
+    right: 0;
+
+    /* 80px heading gap + half of (33.6px heading line - 22px control) */
+    bottom: calc(100% + 86px);
+    margin: 0;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "medium",
+    "purpose": "product-cross-sell",
+    "imagePattern": "product-cutout-below",
+    "structure": "heading + text + 2 links + image"
+  },
+  "contentPattern": {
+    "structure": "one row per product: cell1 = product image | cell2 = H3 title, tagline, Learn more + Buy links",
+    "imagePattern": "product-cutout-below",
+    "density": "medium",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/fragments/surface/explore-surface"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["cards-product"]
+}

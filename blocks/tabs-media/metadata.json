@@ -1,0 +1,25 @@
+{
+  "variantName": "tabs-media",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "medium",
+    "purpose": "media-switcher",
+    "imagePattern": "wide-video",
+    "structure": "tab label + video"
+  },
+  "contentPattern": {
+    "structure": "one row per tab: cell1 = label (Morning/Afternoon/Evening) | cell2 = poster image + MP4 link",
+    "imagePattern": "wide-video",
+    "density": "medium",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/fragments/surface-laptop-ultra/display"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["tabs-media"]
+}

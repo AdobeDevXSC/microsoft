@@ -1,0 +1,25 @@
+{
+  "variantName": "section-nav",
+  "baseBlock": "section-nav",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "sticky-chapter-nav",
+    "imagePattern": "noimg",
+    "structure": "anchor links"
+  },
+  "contentPattern": {
+    "structure": "one row per link: [Performance](#performance) ... [Tech specs](#specs) (or a single cell with a list of links)",
+    "imagePattern": "noimg",
+    "density": "compact",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/surface/devices/surface-laptop-ultra"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["section-nav"]
+}

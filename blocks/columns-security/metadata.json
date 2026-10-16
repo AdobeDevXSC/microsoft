@@ -1,0 +1,25 @@
+{
+  "variantName": "columns-security",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "medium",
+    "purpose": "feature-tiles",
+    "imagePattern": "square-image-top",
+    "structure": "image + heading + text"
+  },
+  "contentPattern": {
+    "structure": "one row, 3 cells: image, H3, paragraph",
+    "imagePattern": "square-image-top",
+    "density": "medium",
+    "colorScheme": "dark"
+  },
+  "usage": {
+    "pagesUsing": ["/fragments/surface-laptop-ultra/security"],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-15"
+  },
+  "options": [],
+  "memberVariantIds": ["columns-security"]
+}

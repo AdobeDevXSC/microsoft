@@ -1,0 +1,89 @@
+/* mobile first: label stacked above its values, divider above each label */
+.table-specs .table-specs-table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+  font: inherit;
+}
+
+.table-specs .table-specs-table tbody,
+.table-specs .table-specs-table tr,
+.table-specs .table-specs-table th,
+.table-specs .table-specs-table td {
+  display: block;
+}
+
+.table-specs .table-specs-table th,
+.table-specs .table-specs-table td {
+  padding: 0;
+  font-weight: inherit;
+  text-align: start;
+  vertical-align: top;
+}
+
+/* category label */
+.table-specs .table-specs-table th {
+  padding: 20px 0 4px;
+  border-top: 1px solid #d4d4d4;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+/* values */
+.table-specs .table-specs-table td {
+  padding: 0 0 20px;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.table-specs .table-specs-table p {
+  margin: 0;
+}
+
+.table-specs .table-specs-table strong {
+  font-weight: 700;
+}
+
+.table-specs .table-specs-table sup {
+  position: relative;
+  top: -0.5em;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+.table-specs .table-specs-table ul,
+.table-specs .table-specs-table ol {
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+/* desktop: label column sized to its content | values column */
+@media (width >= 900px) {
+  .table-specs .table-specs-table {
+    display: table;
+  }
+
+  .table-specs .table-specs-table tbody {
+    display: table-row-group;
+  }
+
+  .table-specs .table-specs-table tr {
+    display: table-row;
+  }
+
+  .table-specs .table-specs-table th,
+  .table-specs .table-specs-table td {
+    display: table-cell;
+    padding: 28px 0;
+    border-top: 1px solid #d4d4d4;
+  }
+
+  .table-specs .table-specs-table .table-specs-label {
+    width: 1%;
+    padding-right: 40px;
+    white-space: nowrap;
+  }
+}
