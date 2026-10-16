@@ -49,11 +49,11 @@
   /* layout */
   --content-max-width: 1146px;
   --section-padding: 48px;
-  --nav-height: 64px;
+  --nav-height: 88px;
   --section-nav-height: 44px;
 
-  /* space taken by sticky bars when jumping to an anchor (header is fixed on mobile) */
-  --anchor-offset: calc(var(--nav-height) + var(--section-nav-height));
+  /* space taken by sticky bars when jumping to an anchor (the header itself scrolls away) */
+  --anchor-offset: var(--section-nav-height);
 }
 
 /* fallback fonts */
@@ -71,6 +71,7 @@
 
 @media (width >= 900px) {
   :root {
+    --nav-height: 54px;
     --body-font-size-l: 24px;
     --heading-font-size-xxl: 28px;
     --heading-font-size-xl: 24px;
@@ -79,7 +80,6 @@
     --display-font-size: 48px;
     --display-font-size-l: 64px;
     --section-padding: 80px;
-    --anchor-offset: var(--section-nav-height);
   }
 }
 

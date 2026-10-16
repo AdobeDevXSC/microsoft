@@ -1,7 +1,7 @@
-/* the block's own section sticks to the top of the page (below the fixed mobile header) */
+/* the block's own section sticks to the top of the page (the header scrolls away) */
 main > .section.section-nav-container {
   position: sticky;
-  top: var(--nav-height, 64px);
+  top: 0;
   z-index: 10;
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ main > .section.section-nav-container > .section-nav-wrapper {
   padding: 0;
 }
 
-/* the open mobile menu (fixed header) must not be covered by the sticky bar */
+/* the open mobile menu must not be covered by the sticky bar */
 :root:has(header nav[aria-expanded="true"]) main > .section.section-nav-container {
   visibility: hidden;
 }

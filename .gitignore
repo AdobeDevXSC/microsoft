@@ -15,3 +15,5 @@ helix-importer-ui
 # importer output
 tools/importer/reports/
 tools/importer/*.bundle.js
+migration-work/navigation-validation/
+migration-work/footer-validation/
