@@ -45,6 +45,8 @@
   --heading-font-size-xs: 14px;
   --display-font-size: 24px;
   --display-font-size-l: 32px;
+  --display-font-size-m: 40px;
+  --display-font-size-xl: 48px;
 
   /* layout */
   --content-max-width: 1146px;
@@ -188,6 +190,38 @@ main .section.dark:not(.footnotes-container) > .default-content-wrapper {
 main .section.dark:not(.footnotes-container) > .default-content-wrapper h2 + p,
 main .section.dark:not(.footnotes-container) > .default-content-wrapper h3 + p {
   margin-inline: auto;
+}
+
+/* dark section titles sit in a centred column, balanced over two lines (source heading scale):
+   h3 titles are 48px at every width; h2 titles step 24 → 40 (768) → 48 (1024) */
+main .section.dark:not(.footnotes-container) > .default-content-wrapper h2,
+main .section.dark:not(.footnotes-container) > .default-content-wrapper h3 {
+  max-width: 672px;
+  margin-inline: auto;
+}
+
+main .section.dark:not(.footnotes-container) > .default-content-wrapper h3 {
+  max-width: 664px;
+  font-size: var(--display-font-size-xl);
+}
+
+/* the product overview title is set in the sans face and only grows on desktop */
+main .section.dark.cards-product-container > .default-content-wrapper h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  text-transform: none;
+}
+
+@media (width >= 768px) {
+  main .section.dark:not(.footnotes-container, .cards-product-container) > .default-content-wrapper h2 {
+    font-size: var(--display-font-size-m);
+  }
+}
+
+@media (width >= 1024px) {
+  main .section.dark:not(.footnotes-container) > .default-content-wrapper h2 {
+    font-size: var(--display-font-size-xl);
+  }
 }
 
 code,

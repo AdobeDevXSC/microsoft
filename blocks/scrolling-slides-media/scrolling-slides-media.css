@@ -165,7 +165,8 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
 }
 
 /* the pinned range (track minus one viewport) splits evenly per slide; the outer
-   half-viewports belong to the first and last slide (source: switches at y+541 / y+1083) */
+   half-viewports belong to the first and last slide (source, all widths: switches at
+   (track - viewport) / 3 and 2/3, e.g. y+541 / y+1083 at 375x812, y+683 / y+1365 at 768x1024) */
 .scrolling-slides-media .scrolling-slides-media-triggers {
   position: absolute;
   inset: 0;
@@ -266,10 +267,10 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
     padding: 0 64px;
   }
 
-  /* desktop: one viewport of track per slide */
+  /* same split as mobile, against the svh track (source: switches at y+600 / y+1200 at 1440x900) */
   .scrolling-slides-media .scrolling-slides-media-trigger:first-child,
   .scrolling-slides-media .scrolling-slides-media-trigger:last-child {
-    flex-basis: 0;
+    flex-basis: 50svh;
   }
 }
 

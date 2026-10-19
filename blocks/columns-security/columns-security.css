@@ -52,7 +52,8 @@
   letter-spacing: 0.02em;
 }
 
-@media (width >= 900px) {
+/* source md (768px+): three columns side by side */
+@media (width >= 768px) {
   .columns-security .columns-security-list {
     flex-direction: row;
     gap: 80px;
@@ -63,10 +64,34 @@
   }
 
   .columns-security .columns-security-body h3 {
+    font-size: var(--heading-font-size-xl);
     line-height: 1.4;
   }
 
   .columns-security .columns-security-body p {
     font-size: 20px;
+  }
+}
+
+/*
+ * Source container insets the columns 28px (768-1023) and 140px (1024-1199);
+ * the section wrapper gives 20px below 900 and 40px above, so make up the difference.
+ * From 1200 the block keeps the section wrapper's width.
+ */
+@media (width >= 768px) and (width < 900px) {
+  .columns-security {
+    padding-inline: 8px;
+  }
+}
+
+@media (width >= 900px) and (width < 1024px) {
+  .columns-security {
+    margin-inline: -12px;
+  }
+}
+
+@media (width >= 1024px) and (width < 1200px) {
+  .columns-security {
+    padding-inline: 100px;
   }
 }

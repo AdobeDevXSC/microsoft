@@ -121,8 +121,40 @@
   padding-bottom: 40px;
 }
 
-/* 2 x 2 grid on desktop */
-@media (width >= 900px) {
+/* source md (768-1023px): one centred column inset 147px from the viewport edge */
+@media (width >= 768px) {
+  .cards-product .cards-product-body {
+    padding: 40px 28px 0;
+  }
+
+  .cards-product .cards-product-title + p {
+    font-size: 20px;
+  }
+
+  .cards-product .cards-product-media {
+    aspect-ratio: 462 / 346;
+  }
+}
+
+/*
+ * Source container pads 147px each side from 768px; the section wrapper gives
+ * 20px below 900 and 40px above, so make up the difference.
+ * From 1200 the block keeps the section wrapper's width.
+ */
+@media (width >= 768px) and (width < 900px) {
+  .cards-product {
+    padding-inline: 127px;
+  }
+}
+
+@media (width >= 900px) and (width < 1200px) {
+  .cards-product {
+    padding-inline: 107px;
+  }
+}
+
+/* source lg (1024px+): 2 x 2 grid */
+@media (width >= 1024px) {
   .cards-product {
     margin-top: 80px;
   }

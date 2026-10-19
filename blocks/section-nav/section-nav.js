@@ -2,6 +2,8 @@
  * Section Nav
  * Sticky in-page chapter navigation.
  * Content: links to in-page ids, e.g. [Performance](#performance), one per row or as a list.
+ *   A link that does not point to an in-page id is matched to a chapter by its label
+ *   ("Local AI" → #localai, "Tech specs" → #specs), so the bar still renders and works.
  * - Clicking a link loads any lazy fragments up to the target before scrolling to it,
  *   so chapters that are not loaded yet still work.
  * - The current chapter is highlighted (aria-current) from an IntersectionObserver over the
@@ -12,7 +14,7 @@
  * Nothing is measured during decoration (layout reads only happen in observer callbacks).
  */
 
-import { loadUntil } from '../../scripts/lazy-fragments.js';
+import { loadUntil, lazyFragmentIds } from '../../scripts/lazy-fragments.js';
 
 const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -35,10 +37,27 @@ function targetId(a) {
   }
 }
 
+const compact = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+/**
+ * Matches a link label to a chapter id on the page (or one a lazy fragment will carry):
+ * the whole label first ("Local AI" → localai), then its words from last ("Tech specs" → specs).
+ * @param {string} label Link text
+ * @returns {string|null}
+ */
+function idFromLabel(label) {
+  const ids = [...document.querySelectorAll('main [id]')].map((el) => el.id)
+    .concat(lazyFragmentIds());
+  const byKey = new Map(ids.map((id) => [compact(id), id]));
+  const words = label.split(/\s+/).map(compact).filter(Boolean).reverse();
+  const key = [compact(label), ...words].find((k) => byKey.has(k));
+  return key ? byKey.get(key) : null;
+}
+
 export default function decorate(block) {
   const links = [...block.querySelectorAll('a[href]')]
     .map((a) => ({ a, id: targetId(a) }))
-    .filter(({ id }) => id);
+    .filter(({ a }) => a.textContent.trim());
   if (!links.length) return;
 
   const nav = document.createElement('nav');
@@ -47,14 +66,33 @@ export default function decorate(block) {
   const list = document.createElement('ul');
   list.className = 'section-nav-list';
 
-  const items = links.map(({ a, id }) => {
+  const setTarget = (link, id) => {
+    link.dataset.target = id;
+    link.href = `#${encodeURIComponent(id)}`;
+  };
+
+  // links without an in-page id get one from their label once chapters are known
+  // (lazy fragments register after this block, so this re-runs on every scan)
+  const resolveTarget = (link) => {
+    if (link.dataset.target) return;
+    const id = idFromLabel(link.textContent);
+    if (id) setTarget(link, id);
+  };
+
+  const items = links.map(({ a, id: linkId }) => {
     const link = document.createElement('a');
     link.className = 'section-nav-link';
-    link.href = `#${encodeURIComponent(id)}`;
     link.textContent = a.textContent.trim();
-    link.dataset.target = id;
+    if (linkId) setTarget(link, linkId);
+    else {
+      link.dataset.target = '';
+      link.href = `#${compact(link.textContent)}`;
+    }
     link.addEventListener('click', async (e) => {
       if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      resolveTarget(link);
+      const id = link.dataset.target;
+      if (!id) return;
       e.preventDefault();
       window.history.pushState(null, '', `#${encodeURIComponent(id)}`);
       const target = await loadUntil(id, { behavior: REDUCED_MOTION.matches ? 'auto' : 'smooth' });
@@ -70,12 +108,16 @@ export default function decorate(block) {
   nav.append(list);
   block.replaceChildren(nav);
 
-  const ids = new Set(items.map((link) => link.dataset.target));
-  const first = items[0].dataset.target;
+  const resolveTargets = () => items.forEach(resolveTarget);
+  resolveTargets();
+  let ids = new Set();
 
+  // the current link: the one for the chapter, or the first link above the first chapter
+  const linkFor = (id) => (id && items.find((link) => link.dataset.target === id)) || items[0];
   const markActive = (id) => {
+    const active = linkFor(id);
     items.forEach((link) => {
-      if (link.dataset.target === id) link.setAttribute('aria-current', 'true');
+      if (link === active) link.setAttribute('aria-current', 'true');
       else link.removeAttribute('aria-current');
     });
   };
@@ -94,18 +136,17 @@ export default function decorate(block) {
   };
 
   // above the first chapter (hero, intro) the first link is the current one
-  let current = first;
-  markActive(first);
+  let current = items[0];
+  markActive(null);
 
   // called from observer callbacks only (layout reads are safe there)
   const setActive = (chapterId) => {
-    const id = chapterId || first;
-    if (id !== current) {
-      current = id;
-      markActive(id);
+    const link = linkFor(chapterId);
+    if (link !== current) {
+      current = link;
+      markActive(chapterId);
     }
-    const link = items.find((item) => item.dataset.target === id);
-    if (link) revealActive(link);
+    revealActive(link);
   };
 
   // each top-level section belongs to the closest chapter at or above it in document order
@@ -121,6 +162,8 @@ export default function decorate(block) {
   const scan = () => {
     const main = block.closest('main') || document.querySelector('main');
     if (!main) return;
+    resolveTargets();
+    ids = new Set(items.map((link) => link.dataset.target).filter(Boolean));
     observer.disconnect();
     chapters.clear();
     let chapter = null;
