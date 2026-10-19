@@ -172,6 +172,13 @@ export function loadAllLazyFragments() {
 }
 
 /**
+ * @returns {string[]} Ids that registered fragments carry over (loaded or not)
+ */
+export function lazyFragmentIds() {
+  return entries.map((entry) => entry.id).filter(Boolean);
+}
+
+/**
  * @returns {boolean} Whether any fragment is still waiting to load
  */
 export function hasPendingFragments() {

@@ -20,8 +20,11 @@ N/A (Document Authoring project)
 
 - Put the block in its own section directly after the hero. Content: links to in-page ids,
   one per row or as a list, e.g. Performance (#performance), Display (#display),
-  Local AI (#localai), Security (#security), Tech specs (#specs). Links to other pages are
-  ignored; full URLs pointing at the current page are accepted.
+  Local AI (#localai), Security (#security), Tech specs (#specs). Full URLs pointing at the
+  current page are accepted. A link without an in-page id (e.g. rewritten to `/` by a content
+  sync) is matched to a chapter by its label: the whole label first ("Local AI" → `localai`),
+  then its words from the last ("Tech specs" → `specs`). Ids from lazy fragments count, and
+  matching re-runs as fragments load, so the bar always renders as a bar.
 - Sticky: the block's section (`.section-nav-container`) sticks to the top of the page across
   all following sections (below the fixed header on mobile, at 0 on desktop).
 - Lazy fragments: clicking a link calls `loadUntil(id, { behavior: 'smooth' })` from
