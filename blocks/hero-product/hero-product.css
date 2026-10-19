@@ -104,6 +104,7 @@
 
 .hero-product .hero-product-text h1 {
   margin-bottom: 8px;
+  font-size: 20px;
   text-wrap: balance;
 }
 
@@ -182,9 +183,14 @@
   white-space: nowrap;
 }
 
-@media (width >= 900px) {
+/* source md (768px): wider inset and the larger description size */
+@media (width >= 768px) {
   .hero-product .hero-product-content {
     padding-inline: 28px;
+  }
+
+  .hero-product .hero-product-text > p:not(.hero-product-display) {
+    font-size: 24px;
   }
 }
 
@@ -216,6 +222,10 @@
   .hero-product .hero-product-text > p:not(.hero-product-display) {
     grid-column: 1;
     padding-bottom: 6px;
+  }
+
+  .hero-product .hero-product-text h1 {
+    font-size: var(--heading-font-size-xxl);
   }
 
   .hero-product .hero-product-display {

@@ -119,17 +119,33 @@
   }
 }
 
+/* source md (768px) container inset is 28px; the section pads 20px */
+@media (width >= 768px) {
+  .tabs-media {
+    margin-inline: 8px;
+  }
+}
+
 @media (width >= 900px) {
+  /* the section pads 40px from 900px; keep the source 28px inset until 1024px */
   .tabs-media {
     margin-top: 88px;
-  }
-
-  .tabs-media .tabs-media-tab {
-    min-width: 160px;
+    margin-inline: -12px;
   }
 
   .tabs-media .video-media .video-toggle {
     top: 40px;
     right: 40px;
+  }
+}
+
+/* source lg (1024px): 147px container inset (capped at the 1146px content width) */
+@media (width >= 1024px) {
+  .tabs-media {
+    margin-inline: max(0px, min(107px, 720px - 50vw));
+  }
+
+  .tabs-media .tabs-media-tab {
+    min-width: 160px;
   }
 }

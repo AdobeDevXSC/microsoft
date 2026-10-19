@@ -130,7 +130,26 @@
   }
 }
 
+/* source md (768px) container inset is 28px; the section pads 20px */
+@media (width >= 768px) {
+  .cards-feature-media {
+    margin-inline: 8px;
+  }
+}
+
+/* the section pads 40px from 900px; keep the source 28px inset until 1024px */
 @media (width >= 900px) {
+  .cards-feature-media {
+    margin-inline: -12px;
+  }
+}
+
+/* source lg (1024px): 147px container inset (capped at the 1146px content width) and the bento */
+@media (width >= 1024px) {
+  .cards-feature-media {
+    margin-inline: max(0px, min(107px, 720px - 50vw));
+  }
+
   .cards-feature-media > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-auto-rows: minmax(211px, auto);
