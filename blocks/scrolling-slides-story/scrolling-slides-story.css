@@ -172,7 +172,15 @@ main .section:has(.scrolling-slides-story) {
   display: none;
 }
 
-/* desktop: the stage is pinned, one viewport of scroll per story, panel column centred */
+/* tablet and up: the panels become a centred 440px column */
+@media (width >= 768px) {
+  .scrolling-slides-story .scrolling-slides-story-panels {
+    width: min(440px, 100%);
+    margin-inline: auto;
+  }
+}
+
+/* desktop: the stage is pinned, one viewport of scroll per story */
 @media (width >= 900px) {
   .scrolling-slides-story .scrolling-slides-story-track {
     height: calc(var(--story-count, 1) * 100svh);
@@ -191,10 +199,6 @@ main .section:has(.scrolling-slides-story) {
     inset: 40px auto auto 40px;
   }
 
-  .scrolling-slides-story .scrolling-slides-story-panels {
-    width: min(440px, 100%);
-  }
-
   .scrolling-slides-story .scrolling-slides-story-triggers {
     position: absolute;
     inset: 0;
@@ -205,6 +209,24 @@ main .section:has(.scrolling-slides-story) {
 
   .scrolling-slides-story .scrolling-slides-story-trigger {
     flex: 1;
+  }
+}
+
+/* source keeps the 18px body until 1024px */
+@media (900px <= width < 1024px) {
+  .scrolling-slides-story .scrolling-slides-story-body-inner > * {
+    font-size: 18px;
+  }
+}
+
+/* wide: the column sits 147px from the left of a centred 1600px frame */
+@media (width >= 1024px) {
+  .scrolling-slides-story .scrolling-slides-story-stage {
+    padding-inline-start: max(147px, 50vw - 653px);
+  }
+
+  .scrolling-slides-story .scrolling-slides-story-panels {
+    margin-inline: 0;
   }
 }
 

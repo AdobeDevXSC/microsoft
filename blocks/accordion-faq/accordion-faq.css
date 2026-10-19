@@ -93,7 +93,9 @@ main .section.accordion-faq-container .default-content-wrapper:has(+ .accordion-
   justify-content: space-between;
   gap: 16px;
   padding: 20px 0;
-  font-size: var(--heading-font-size-m);
+
+  /* source: 18px below 1024px (incl. 900-1023), 20px from 1024px */
+  font-size: 18px;
   line-height: 1.4;
   letter-spacing: 0.01em;
   cursor: pointer;
@@ -233,7 +235,26 @@ main .section.accordion-faq-container .default-content-wrapper:has(+ .accordion-
   }
 }
 
+/*
+ * Source: the column sits in a container with 147px side padding from 768px, so below
+ * 1024px it shrinks to (viewport - 294px) instead of centring at 672px.
+ * The section wrapper already pads 20px (40px from 900px), hence 254px / 214px here.
+ */
+@media (width >= 768px) {
+  .accordion-faq {
+    max-width: min(672px, 100% - 254px);
+  }
+
+  main > .section.accordion-faq-container > .default-content-wrapper:has(+ .accordion-faq-wrapper) {
+    max-width: min(672px, 100% - 294px);
+  }
+}
+
 @media (width >= 900px) {
+  .accordion-faq {
+    max-width: min(672px, 100% - 214px);
+  }
+
   main > .section.accordion-faq-container {
     padding-top: var(--section-padding);
   }
@@ -259,5 +280,11 @@ main .section.accordion-faq-container .default-content-wrapper:has(+ .accordion-
     /* 80px heading gap + half of (33.6px heading line - 22px control) */
     bottom: calc(100% + 86px);
     margin: 0;
+  }
+}
+
+@media (width >= 1024px) {
+  .accordion-faq .accordion-faq-item-label {
+    font-size: var(--heading-font-size-m);
   }
 }

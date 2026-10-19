@@ -132,18 +132,17 @@ footer .footer .footer-menu a {
   display: flex;
 }
 
-@media (width >= 900px) {
-  /* three groups per row; the stacked rows are spaced as on the source */
+/* source stacks the groups at max-width: 540px and puts all six in one row from 1083px */
+@media (540px < width <= 1082px) {
+  /* three groups per row; the source rows never shrink below 348px and 332px */
   footer .footer-columns {
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 32px;
-    padding-bottom: 16px;
+    grid-template-rows: minmax(348px, auto) minmax(332px, auto);
   }
+}
 
-  footer .footer-group {
-    padding: 0 12px;
-  }
-
+/* source stacks the base strip at max-width: 767px */
+@media (width > 767px) {
   /* lead links sit in one row; legal links + copyright align right on their own row */
   footer .footer-lead {
     flex-flow: row wrap;
@@ -166,16 +165,16 @@ footer .footer .footer-menu a {
   }
 }
 
-@media (width >= 1200px) {
+@media (width > 1082px) {
+  footer .footer-columns {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (width > 1083px) {
   /* content is capped at 1600px, centred with a 5% gutter */
   footer .footer {
     padding: 0 max(5%, calc((100% - 1600px) / 2));
-  }
-
-  footer .footer-columns {
-    grid-template-columns: repeat(6, 1fr);
-    row-gap: 0;
-    padding-bottom: 0;
   }
 
   /* the first group of each three-column half sits flush with the content edge */
