@@ -88,7 +88,8 @@ const PAGE_TEMPLATE = {
     {
       "name": "tabs-media",
       "instances": [
-        "[id=\"#display\"] .relative.mt-10"
+        "[id=\"#display\"] .relative.mt-10",
+            "[id=\"#display\"] div.relative:has([role=\"tab\"]):has(video, img)"
       ]
     },
     {
@@ -177,6 +178,7 @@ const PAGE_TEMPLATE = {
       "id": "section-4",
       "name": "Shines in any setting (tabbed media)",
       "selector": [
+        "[id=\"Ultra-tabbed-space\"]",
         "[id=\"#display\"]"
       ],
       "style": "dark",
@@ -184,6 +186,7 @@ const PAGE_TEMPLATE = {
         "tabs-media"
       ],
       "defaultContent": [
+        "[id=\"ultra-header-above-tabbed-section\"]",
         "[id=\"#display\"] .container"
       ]
     },
@@ -380,11 +383,20 @@ function measureFragments(document) {
   PAGE_TEMPLATE.sections.forEach((section) => {
     const target = SECTION_TARGETS[section.id];
     if (!target || target === MAIN) return;
-    const el = section.selector.map((s) => {
+    // a section can span several sibling containers: add up every one that matches
+    const els = [...new Set(section.selector.map((s) => {
       try { return document.querySelector(s); } catch (e) { return null; }
-    }).find(Boolean);
+    }).filter(Boolean))];
     let h = 0;
-    try { h = el ? el.getBoundingClientRect().height : 0; } catch (e) { h = 0; }
+    // display:contents wrappers report 0; fall back to the span of their children
+    const height = (el) => {
+      const own = el.getBoundingClientRect();
+      if (own.height > 0) return own.height;
+      const boxes = [...el.children].map((c) => c.getBoundingClientRect()).filter((r) => r.height > 0);
+      if (!boxes.length) return 0;
+      return Math.max(...boxes.map((r) => r.bottom)) - Math.min(...boxes.map((r) => r.top));
+    };
+    try { h = els.reduce((sum, el) => sum + height(el), 0); } catch (e) { h = 0; }
     heights[target] = (heights[target] || 0) + h;
   });
   Object.keys(heights).forEach((k) => {

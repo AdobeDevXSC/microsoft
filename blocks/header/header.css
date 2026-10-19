@@ -366,6 +366,16 @@ header .nav-search-submit {
   width: 36px;
   height: 36px;
   font-size: 16px;
+
+  /* as on the source: transparent at rest and on hover (no hover fill); the transition is declared there too */
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+/* source keyboard focus on the submit: 1px dashed white, 2px outside */
+header .nav-search-submit:focus-visible {
+  outline: 1px dashed var(--header-text);
+  outline-offset: 2px;
 }
 
 header .nav-search-submit::before {

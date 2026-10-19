@@ -3,7 +3,8 @@
 /**
  * Parser for tabs-media. Base: tabs.
  * Source: https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra
- * Instance selector: [id="#display"] .relative.mt-10
+ * Instance selectors: [id="#display"] .relative.mt-10 (original markup),
+ *   [id="#display"] div.relative:has([role="tab"]):has(video, img) (current markup)
  *
  * Output (blocks/tabs-media/README.md): one row per tab:
  *   cell1 = label (Morning/Afternoon/Evening) | cell2 = poster image + MP4 link(s)
