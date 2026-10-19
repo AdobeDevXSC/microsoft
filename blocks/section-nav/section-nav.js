@@ -6,7 +6,9 @@
  *   so chapters that are not loaded yet still work.
  * - The current chapter is highlighted (aria-current) from an IntersectionObserver over the
  *   page's sections; the section list is re-scanned whenever a fragment is inserted.
- * - Horizontally scrollable on narrow screens.
+ *   Above the first chapter the first link is current.
+ * - Horizontally scrollable on narrow screens; the list (never the page) smooth-scrolls
+ *   to keep the current link centred, clamped to its scroll range.
  * Nothing is measured during decoration (layout reads only happen in observer callbacks).
  */
 
@@ -69,21 +71,41 @@ export default function decorate(block) {
   block.replaceChildren(nav);
 
   const ids = new Set(items.map((link) => link.dataset.target));
-  let current = null;
+  const first = items[0].dataset.target;
 
-  const setActive = (id) => {
-    if (id === current) return;
-    current = id;
+  const markActive = (id) => {
     items.forEach((link) => {
-      if (link.dataset.target === id) {
-        link.setAttribute('aria-current', 'true');
-        // keep the active link visible in the horizontal scroller (observer callback, not decorate)
-        const left = link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2;
-        list.scrollTo({ left: Math.max(0, left), behavior: REDUCED_MOTION.matches ? 'auto' : 'smooth' });
-      } else {
-        link.removeAttribute('aria-current');
-      }
+      if (link.dataset.target === id) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
     });
+  };
+
+  // scroll only the horizontal list (never the page) so the active link sits centred,
+  // clamped to the list's scroll range (matches the source)
+  const revealActive = (link) => {
+    if (list.scrollWidth <= list.clientWidth) return;
+    const listBox = list.getBoundingClientRect();
+    const linkBox = link.getBoundingClientRect();
+    const centred = list.scrollLeft + (linkBox.left - listBox.left)
+      - (list.clientWidth - linkBox.width) / 2;
+    const left = Math.round(Math.min(Math.max(0, centred), list.scrollWidth - list.clientWidth));
+    if (Math.abs(left - list.scrollLeft) < 1) return;
+    list.scrollTo({ left, behavior: REDUCED_MOTION.matches ? 'auto' : 'smooth' });
+  };
+
+  // above the first chapter (hero, intro) the first link is the current one
+  let current = first;
+  markActive(first);
+
+  // called from observer callbacks only (layout reads are safe there)
+  const setActive = (chapterId) => {
+    const id = chapterId || first;
+    if (id !== current) {
+      current = id;
+      markActive(id);
+    }
+    const link = items.find((item) => item.dataset.target === id);
+    if (link) revealActive(link);
   };
 
   // each top-level section belongs to the closest chapter at or above it in document order
@@ -103,12 +125,14 @@ export default function decorate(block) {
     chapters.clear();
     let chapter = null;
     [...main.children].forEach((section) => {
+      // the sticky bar's own section is always on screen; it belongs to no chapter
+      if (section.contains(block)) return;
       const own = section.id && ids.has(section.id) ? section.id : null;
       const nested = own ? null : [...ids].find((id) => {
         const el = document.getElementById(id);
         return el && section.contains(el);
       });
-      chapter = section.contains(block) ? null : own || nested || chapter;
+      chapter = own || nested || chapter;
       chapters.set(section, chapter);
       observer.observe(section);
     });

@@ -228,15 +228,29 @@ export default function parse(element, { document }) {
       return labels.length ? labels.every((l) => names.includes(l.toLowerCase())) : names.every(Boolean);
     });
     if (holder) flightTabs = resolveRef(holder.tabs, rows).map((t) => resolveRef(t, rows));
-    flightTabs = flightTabs.map((t) => ({ label: clean(t.label), cell: mediaFromFlight(t, rows, document) }));
+    const defaultValue = clean(holder ? resolveRef(holder.defaultValue, rows) : '').toLowerCase();
+    flightTabs = flightTabs.map((t) => ({
+      label: clean(t.label),
+      selected: !!defaultValue && clean(resolveRef(t.value, rows)).toLowerCase() === defaultValue,
+      cell: mediaFromFlight(t, rows, document),
+    }));
   }
+
+  // Default tab: DOM aria-selected="true" first; else flight-data defaultValue; else none
+  let selectedLabel = clean(tabEls.find((t) => t.getAttribute('aria-selected') === 'true')?.textContent).toLowerCase();
+  if (!selectedLabel) selectedLabel = (flightTabs.find((t) => t.selected)?.label || '').toLowerCase();
 
   const order = labels.length ? labels : flightTabs.map((t) => t.label);
   const cells = [];
   order.forEach((label) => {
     let cell = domMedia.get(label.toLowerCase());
     if (!cell || !cell.length) cell = flightTabs.find((t) => t.label.toLowerCase() === label.toLowerCase())?.cell || [];
-    cells.push([label, cell.length ? cell : '']);
+    let labelCell = label;
+    if (selectedLabel && label.toLowerCase() === selectedLabel) {
+      labelCell = document.createElement('strong');
+      labelCell.textContent = label;
+    }
+    cells.push([labelCell, cell.length ? cell : '']);
   });
 
   if (!cells.length) {

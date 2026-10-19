@@ -3,9 +3,11 @@
  * Full-bleed pinned video stage with a column of expandable story panels.
  * One row per story: media cell (optional poster + desktop/mobile MP4 links)
  * | text cell (H2 + text).
- * Desktop: the stage is sticky; one scroll "trigger" per story opens its panel and crossfades
- * its video in. Inactive videos are paused.
- * Mobile: stories stack (media, then text), every panel open, nothing pinned.
+ * One full-bleed stage holds every story video stacked in place; the panels form a single-open
+ * accordion over it. Opening a panel crossfades its video in; inactive videos are paused.
+ * Desktop: the stage is sticky; one scroll "trigger" per story opens its panel, and clicking a
+ * collapsed heading scrolls to that story's trigger.
+ * Mobile: nothing is pinned; tapping a collapsed heading opens it and switches the video.
  * Never measures layout: activation comes from IntersectionObserver only, so the block can be
  * decorated while detached (lazy fragments).
  */
@@ -70,15 +72,15 @@ function buildPanel(text, index, id) {
   return { panel, button };
 }
 
-function syncVideos(stories, active) {
+function syncVideos(stories, active, userInitiated) {
   stories.forEach(({ media }, i) => {
     const video = media.querySelector('video');
     if (!video) return;
-    const isActive = !PINNED.matches || i === active;
+    const isActive = i === active;
     video.dataset.autoplay = isActive;
     if (!isActive) {
       pauseVideos(media);
-    } else if (PINNED.matches && media.isConnected && !REDUCED_MOTION.matches
+    } else if ((PINNED.matches || userInitiated) && media.isConnected && !REDUCED_MOTION.matches
       && video.dataset.userPaused !== 'true') {
       video.play().catch(() => {});
     }
@@ -119,27 +121,33 @@ export default function decorate(block) {
     trigger.dataset.index = i;
     triggers.append(trigger);
 
-    button.addEventListener('click', () => {
-      const behavior = REDUCED_MOTION.matches ? 'auto' : 'smooth';
-      (PINNED.matches ? trigger : panel).scrollIntoView({ behavior, block: 'start' });
-    });
     return {
       media, panel, button, trigger,
     };
   });
 
   let active = -1;
-  const activate = (index) => {
+  const activate = (index, userInitiated = false) => {
     if (index === active) return;
     active = index;
     stories.forEach(({ media, panel, button }, i) => {
-      const open = !PINNED.matches || i === index;
       media.classList.toggle('is-active', i === index);
       panel.classList.toggle('is-active', i === index);
-      button.setAttribute('aria-expanded', open);
+      button.setAttribute('aria-expanded', i === index);
     });
-    syncVideos(stories, active);
+    syncVideos(stories, active, userInitiated);
   };
+
+  stories.forEach(({ button, trigger }, i) => {
+    button.addEventListener('click', () => {
+      if (PINNED.matches) {
+        // desktop: the scroll position owns the active story
+        trigger.scrollIntoView({ behavior: REDUCED_MOTION.matches ? 'auto' : 'smooth', block: 'start' });
+      } else {
+        activate(i, true);
+      }
+    });
+  });
 
   stage.append(layers, panels);
   track.append(stage, triggers);

@@ -1,0 +1,9 @@
+{
+  "sites": {
+    "microsoft": {
+      "previewOrg": "adobedevxsc",
+      "previewSite": "microsoft",
+      "contentHostUrl": "https://content.da.live/adobedevxsc/microsoft/"
+    }
+  }
+}

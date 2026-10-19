@@ -2,25 +2,56 @@
  * values from the source panel (microsoft.com/surface "Run local. Run free."):
  * story panels #1a1a1a / 12px radius / 4px apart, toggle padding 40 24 20 40,
  * Aux Mono heading 24px open / 18px collapsed (shifted 20px left), body 18px -> 20px at 1.4
+ * mobile: one full-bleed 100svh stage (padding 60px 20px), accordion at the bottom, tap to switch
+ * desktop: the same stage pinned (sticky), one viewport of scroll per story
  */
 
-/* mobile first: stories stack (media, then text), every panel open, nothing pinned */
-.scrolling-slides-story .scrolling-slides-story-track {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+/* the 100vw stage includes the scrollbar; clip it so the page never scrolls sideways */
+main .section:has(.scrolling-slides-story) {
+  overflow-x: clip;
 }
 
-.scrolling-slides-story .scrolling-slides-story-stage,
-.scrolling-slides-story .scrolling-slides-story-layers,
-.scrolling-slides-story .scrolling-slides-story-panels {
-  display: contents;
+.scrolling-slides-story .scrolling-slides-story-track {
+  position: relative;
+}
+
+/* full-bleed stage: stacked videos behind, accordion panels on top (bottom-aligned on mobile) */
+.scrolling-slides-story .scrolling-slides-story-stage {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 100svh;
+  margin-inline: calc(50% - 50vw);
+
+  /* re-align the panel column with the content column of the block */
+  padding: 60px calc(50vw - 50%);
+  overflow: hidden;
+}
+
+.scrolling-slides-story .scrolling-slides-story-layers {
+  position: absolute;
+  inset: 0;
+}
+
+.scrolling-slides-story .scrolling-slides-story-media {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease-out, visibility 0s 0.7s;
+}
+
+.scrolling-slides-story .scrolling-slides-story-media.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.7s ease-out;
 }
 
 .scrolling-slides-story .scrolling-slides-story-media .video-media {
-  aspect-ratio: 4 / 5;
-  max-height: 80svh;
-  border-radius: 12px;
+  height: 100%;
 }
 
 /* source play/pause control: frosted circle, top-left */
@@ -36,16 +67,18 @@
   background-color: rgb(255 255 255 / 20%);
 }
 
+.scrolling-slides-story .scrolling-slides-story-panels {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .scrolling-slides-story .scrolling-slides-story-panel {
   position: relative;
-  margin-bottom: 32px;
   border-radius: 12px;
   background-color: var(--surface-color);
   overflow: hidden;
-}
-
-.scrolling-slides-story .scrolling-slides-story-panel:last-child {
-  margin-bottom: 0;
 }
 
 .scrolling-slides-story .scrolling-slides-story-heading {
@@ -79,6 +112,45 @@
   transition: margin 0.3s, padding 0.3s, font-size 0.3s;
 }
 
+/* collapsed panel: smaller heading 20px further left, plus icon, 60px tall */
+.scrolling-slides-story .scrolling-slides-story-panel:not(.is-active) .scrolling-slides-story-toggle {
+  margin: -28px 0 -8px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.scrolling-slides-story .scrolling-slides-story-panel:not(.is-active) .scrolling-slides-story-toggle::after {
+  content: "";
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 36px;
+  height: 36px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Cpath fill='white' d='M6.33 0c.28 0 .5.22.5.5v5.33h5.34a.5.5 0 0 1 0 1H6.83v5.34a.5.5 0 0 1-1 0V6.83H.5a.5.5 0 0 1 0-1h5.33V.5c0-.28.23-.5.5-.5'/%3E%3C/svg%3E") center / 12px no-repeat;
+  transition: rotate 0.3s;
+}
+
+.scrolling-slides-story .scrolling-slides-story-panel:not(.is-active) .scrolling-slides-story-toggle:hover::after {
+  rotate: -90deg;
+}
+
+.scrolling-slides-story .scrolling-slides-story-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.3s, visibility 0s 0.3s;
+}
+
+.scrolling-slides-story .scrolling-slides-story-panel.is-active .scrolling-slides-story-body {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition: grid-template-rows 0.3s;
+}
+
+.scrolling-slides-story .scrolling-slides-story-body-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
 .scrolling-slides-story .scrolling-slides-story-body-inner > * {
   margin: 0;
   padding: 0 40px;
@@ -100,59 +172,19 @@
   display: none;
 }
 
-/* desktop: full-bleed sticky stage, one viewport of scroll per story */
+/* desktop: the stage is pinned, one viewport of scroll per story, panel column centred */
 @media (width >= 900px) {
-  /* the 100vw stage includes the scrollbar; clip it so the page never scrolls sideways */
-  main .section:has(.scrolling-slides-story) {
-    overflow-x: clip;
-  }
-
   .scrolling-slides-story .scrolling-slides-story-track {
-    position: relative;
-    display: block;
     height: calc(var(--story-count, 1) * 100svh);
   }
 
   .scrolling-slides-story .scrolling-slides-story-stage {
     position: sticky;
     top: 0;
-    box-sizing: border-box;
-    display: flex;
+    flex-direction: row;
+    justify-content: normal;
     align-items: center;
-    width: 100vw;
-    height: 100svh;
-    margin-inline: calc(50% - 50vw);
-
-    /* re-align the panel column with the content column of the block */
-    padding-inline: calc(50vw - 50%);
-    overflow: hidden;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-layers {
-    position: absolute;
-    inset: 0;
-    display: block;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-media {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.7s ease-out, visibility 0s 0.7s;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-media.is-active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.7s ease-out;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-media .video-media {
-    height: 100%;
-    max-height: none;
-    aspect-ratio: auto;
-    border-radius: 0;
+    padding-block: 0;
   }
 
   .scrolling-slides-story .scrolling-slides-story-media .video-toggle {
@@ -160,54 +192,7 @@
   }
 
   .scrolling-slides-story .scrolling-slides-story-panels {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
     width: min(440px, 100%);
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-panel {
-    margin: 0;
-  }
-
-  /* collapsed panel: smaller heading 20px further left, plus icon, 60px tall */
-  .scrolling-slides-story .scrolling-slides-story-panel:not(.is-active) .scrolling-slides-story-toggle {
-    margin: -28px 0 -8px;
-    padding-left: 20px;
-    font-size: 18px;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-panel:not(.is-active) .scrolling-slides-story-toggle::after {
-    content: "";
-    flex-shrink: 0;
-    align-self: flex-start;
-    width: 36px;
-    height: 36px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Cpath fill='white' d='M6.33 0c.28 0 .5.22.5.5v5.33h5.34a.5.5 0 0 1 0 1H6.83v5.34a.5.5 0 0 1-1 0V6.83H.5a.5.5 0 0 1 0-1h5.33V.5c0-.28.23-.5.5-.5'/%3E%3C/svg%3E") center / 12px no-repeat;
-    transition: rotate 0.3s;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-panel:not(.is-active) .scrolling-slides-story-toggle:hover::after {
-    rotate: -90deg;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-body {
-    display: grid;
-    grid-template-rows: 0fr;
-    visibility: hidden;
-    transition: grid-template-rows 0.3s, visibility 0s 0.3s;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-panel.is-active .scrolling-slides-story-body {
-    grid-template-rows: 1fr;
-    visibility: visible;
-    transition: grid-template-rows 0.3s;
-  }
-
-  .scrolling-slides-story .scrolling-slides-story-body-inner {
-    min-height: 0;
-    overflow: hidden;
   }
 
   .scrolling-slides-story .scrolling-slides-story-triggers {
