@@ -43,7 +43,8 @@
         {
           "name": "tabs-media",
           "instances": [
-            "[id=\"#display\"] .relative.mt-10"
+            "[id=\"#display\"] .relative.mt-10",
+            "[id=\"#display\"] div.relative:has([role=\"tab\"]):has(video, img)"
           ]
         },
         {
@@ -132,6 +133,7 @@
           "id": "section-4",
           "name": "Shines in any setting (tabbed media)",
           "selector": [
+            "[id=\"Ultra-tabbed-space\"]",
             "[id=\"#display\"]"
           ],
           "style": "dark",
@@ -139,6 +141,7 @@
             "tabs-media"
           ],
           "defaultContent": [
+            "[id=\"ultra-header-above-tabbed-section\"]",
             "[id=\"#display\"] .container"
           ]
         },

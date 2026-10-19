@@ -27,7 +27,10 @@ N/A (Document Authoring project)
 - Desktop (900px+): a full-bleed sticky stage, one viewport of scroll per story. As each story's
   scroll segment crosses the middle of the viewport its panel opens and its video crossfades in;
   inactive videos are paused. Clicking a collapsed panel heading scrolls to that story.
-- Mobile: stories stack (video, then text), all panels open, nothing pinned.
+- Mobile (below 900px): one full-bleed 100svh stage (videos stacked in place) with the panels as
+  a single-open accordion at its bottom (60px/20px inset). Tapping a collapsed heading opens it,
+  collapses the others (`aria-expanded`) and crossfades/plays its video. Nothing is pinned.
 - Safe inside lazy fragments: nothing is measured during decoration; activation is driven by
   IntersectionObserver.
-- Not reproduced: the source's timed auto-advance and progress bar (activation is scroll-driven).
+- Not reproduced: the source's video-length auto-advance and progress bar (activation is scroll-driven
+  on desktop and tap-driven on mobile).

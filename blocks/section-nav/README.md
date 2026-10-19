@@ -29,8 +29,11 @@ N/A (Document Authoring project)
   URL hash is updated and focus moves to the target. Reduced motion uses an instant jump.
 - Scroll-spy: an IntersectionObserver watches every top-level section of `<main>`. A section
   belongs to the chapter whose id is at or above it, so multi-section chapters (e.g. display =
-  two sections) stay highlighted throughout. The active link gets `aria-current="true"`. The
-  section list is re-scanned on every `fragment-loaded` event.
+  two sections) stay highlighted throughout. Sections above the first chapter (hero, intro)
+  make the first link active, so a link is always active. The active link gets
+  `aria-current="true"`. The section list is re-scanned on every `fragment-loaded` event.
 - Targets get `scroll-margin-top: var(--section-nav-offset)`; the block publishes that variable
   on `:root` (sticky top + bar height) from a ResizeObserver.
-- Narrow screens: links scroll horizontally, and the active link is scrolled into view.
+- Narrow screens: links scroll horizontally. When the active link changes, only the list
+  smooth-scrolls (never the page) so the link is centred, clamped to the list's scroll range;
+  this is the source behaviour. Back at the top it returns to `scrollLeft` 0.

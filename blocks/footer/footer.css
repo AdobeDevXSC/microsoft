@@ -1,20 +1,189 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #000;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer {
+  --footer-text: #d2d2d2;
+  --footer-hover: #fff;
+  --globe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1a9 9 0 1 1 0 18 9 9 0 0 1 0-18Zm2.8 10H7.2c.15 2.6.85 4.95 1.83 6.4A8 8 0 0 0 10 17.98l.97-.58c.98-1.45 1.68-3.8 1.83-6.4ZM2.03 11a8 8 0 0 0 5.9 6.73c-.9-1.73-1.5-4.07-1.68-6.73H2.03Zm15.94 0h-4.22c-.18 2.66-.78 5-1.68 6.73A8 8 0 0 0 17.97 11ZM7.93 2.27A8 8 0 0 0 2.03 10h4.22c.18-2.66.78-5 1.68-6.73ZM10 2.02l-.97.58C8.05 4.05 7.35 6.4 7.2 10h5.6c-.15-3.6-.85-5.95-1.83-7.4L10 2.02Zm2.07.25c.9 1.73 1.5 4.07 1.68 6.73h4.22a8 8 0 0 0-5.9-6.73Z'/%3E%3C/svg%3E");
+
+  box-sizing: border-box;
+  padding: 0 12px;
+  color: var(--footer-text);
+  font-family: 'Segoe UI', var(--body-font-family);
+  font-size: 11px;
+  font-weight: var(--body-font-weight);
+  line-height: 16.5px;
+  letter-spacing: 0.32px;
 }
 
-footer .footer p {
+footer .footer ul {
   margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer a:any-link {
+  color: var(--footer-text);
+  text-decoration: none;
+}
+
+footer .footer a:hover,
+footer .footer a:focus-visible {
+  color: var(--footer-hover);
+  text-decoration: underline;
+}
+
+/* link columns: stacked groups on small screens */
+footer .footer-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+footer .footer-group {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 0 12px;
+}
+
+footer .footer-group-title {
+  margin: 0;
+  padding-top: 36px;
+  font-family: var(--body-font-family);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.32px;
+}
+
+footer .footer .footer-group-links {
+  margin-top: 12px;
+}
+
+footer .footer-group-links li {
+  padding-bottom: 8px;
+  line-height: 16px;
+}
+
+footer .footer-group-links li + li {
+  padding-top: 8px;
+}
+
+footer .footer .footer-group-links a {
+  display: inline-flex;
+}
+
+/* base strip: locale + privacy links, then legal links and copyright */
+footer .footer-base {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  margin-top: 16px;
+  padding: 30px 12px 16px;
+}
+
+/* small screens: lead links stack; the legal list wraps from the left */
+footer .footer-lead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 9px;
+}
+
+footer .footer-lead-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+}
+
+footer .footer-lead-link picture,
+footer .footer-lead-link img {
+  display: block;
+  width: 43px;
+  height: 16px;
+}
+
+footer .footer-locale {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 31px;
+}
+
+footer .footer-locale::before {
+  content: '';
+  flex: none;
+  width: 20px;
+  height: 20px;
+  background: currentcolor;
+  mask: var(--globe) center / contain no-repeat;
+}
+
+footer .footer .footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  margin: 6px 0;
+  line-height: 25px;
+}
+
+footer .footer .footer-menu a {
+  display: flex;
 }
 
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  /* three groups per row; the stacked rows are spaced as on the source */
+  footer .footer-columns {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 32px;
+    padding-bottom: 16px;
+  }
+
+  footer .footer-group {
+    padding: 0 12px;
+  }
+
+  /* lead links sit in one row; legal links + copyright align right on their own row */
+  footer .footer-lead {
+    flex-flow: row wrap;
+    gap: 24px;
+    align-items: center;
+    min-height: 31px;
+    padding-bottom: 0;
+  }
+
+  footer .footer-lead-link {
+    min-height: 0;
+  }
+
+  footer .footer-menu-nav {
+    margin-left: auto;
+  }
+
+  footer .footer .footer-menu {
+    justify-content: flex-end;
+  }
+}
+
+@media (width >= 1200px) {
+  /* content is capped at 1600px, centred with a 5% gutter */
+  footer .footer {
+    padding: 0 max(5%, calc((100% - 1600px) / 2));
+  }
+
+  footer .footer-columns {
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 0;
+    padding-bottom: 0;
+  }
+
+  /* the first group of each three-column half sits flush with the content edge */
+  footer .footer-group:nth-child(3n + 1) {
+    padding-left: 0;
+  }
+
+  footer .footer-base {
+    padding: 30px 0 16px;
   }
 }

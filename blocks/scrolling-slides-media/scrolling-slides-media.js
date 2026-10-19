@@ -2,15 +2,14 @@
  * Scrolling Slides (media)
  * Pinned media slides that switch as the visitor scrolls.
  * One row per slide: media cell (poster + desktop/mobile MP4 links) | text cell (H2 + paragraph).
- * Desktop: the stage is sticky and one scroll "trigger" per slide decides the active slide.
- * Mobile: slides stack, nothing is pinned.
+ * All widths: the stage is sticky and one scroll "trigger" per slide decides the active slide
+ * (layout differs per breakpoint in CSS only: text on top below 900px, bottom-left above).
  * Never measures layout: activation comes from IntersectionObserver only, so the block can be
  * decorated while detached (lazy fragments).
  */
 
 import { buildVideo, pauseVideos } from '../../scripts/video.js';
 
-const PINNED = window.matchMedia('(width >= 900px)');
 const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function splitCells(row) {
@@ -28,11 +27,11 @@ function syncVideos(slides, active) {
   slides.forEach((slide, i) => {
     const video = slide.querySelector('video');
     if (!video) return;
-    const isActive = !PINNED.matches || i === active;
+    const isActive = i === active;
     video.dataset.autoplay = isActive;
     if (!isActive) {
       pauseVideos(slide);
-    } else if (PINNED.matches && slide.isConnected && !REDUCED_MOTION.matches
+    } else if (slide.isConnected && !REDUCED_MOTION.matches
       && video.dataset.userPaused !== 'true') {
       video.play().catch(() => {});
     }
@@ -88,7 +87,7 @@ export default function decorate(block) {
     button.setAttribute('aria-label', heading?.textContent.trim() || `Slide ${i + 1}`);
     button.addEventListener('click', () => {
       const behavior = REDUCED_MOTION.matches ? 'auto' : 'smooth';
-      (PINNED.matches ? trigger : slide).scrollIntoView({ behavior, block: 'start' });
+      trigger.scrollIntoView({ behavior, block: 'start' });
     });
     nav.append(button);
     return slide;
@@ -122,6 +121,4 @@ export default function decorate(block) {
     });
   }, { rootMargin: '-50% 0px -50% 0px' });
   [...triggers.children].forEach((trigger) => observer.observe(trigger));
-
-  PINNED.addEventListener('change', () => syncVideos(slides, active));
 }

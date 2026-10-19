@@ -2,6 +2,7 @@
  * Tabs (media)
  * A tablist switching between media panels.
  * One row per tab: label cell | panel cell (poster image + MP4 links, optional text).
+ * A bold label (<strong>/<b>) marks the initially selected tab; otherwise the first tab is.
  * ARIA tabs pattern with roving tabindex and arrow-key navigation; hidden panels' videos pause.
  */
 
@@ -24,6 +25,7 @@ export default function decorate(block) {
 
   const tabs = [];
   const tabpanels = [];
+  let initial = -1;
 
   const select = (index, focus = false) => {
     tabs.forEach((tab, i) => {
@@ -41,6 +43,8 @@ export default function decorate(block) {
     // label: first cell, unless it is the only cell
     const label = cells.length > 1 ? cells[0] : null;
     const content = cells.length > 1 ? cells.slice(1) : cells;
+    // a bold label marks the default tab; the rendered label stays plain text
+    if (initial < 0 && label?.querySelector('strong, b')) initial = i;
     const text = label?.textContent.trim() || `Tab ${i + 1}`;
     const id = `${prefix}-${toClassName(text) || i}`;
 
@@ -89,5 +93,5 @@ export default function decorate(block) {
   });
 
   block.replaceChildren(tablist, panels);
-  select(0);
+  select(Math.max(initial, 0));
 }

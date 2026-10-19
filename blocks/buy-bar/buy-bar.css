@@ -64,15 +64,12 @@ main > .section.buy-bar-container:has(> .buy-bar-wrapper:only-child) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 0;
   padding: 0 24px;
 }
 
+/* name and price wrap (source white-space: normal) */
 .buy-bar .buy-bar-info p {
   margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .buy-bar .buy-bar-name {
@@ -83,14 +80,18 @@ main > .section.buy-bar-container:has(> .buy-bar-wrapper:only-child) {
   font-size: var(--body-font-size-xs);
 }
 
+/* the info column and the CTA share the shrink (source flex: 0 1 auto, padding 12px 20px).
+   The side padding is two shrinkable grid tracks, so the pill keeps the source size (label + 40px)
+   and shrinks like the source, but never below its label: the label is never clipped */
 .buy-bar a.buy-bar-cta:any-link {
   box-sizing: border-box;
-  display: inline-flex;
-  flex-shrink: 0;
+  display: inline-grid;
+  grid-template-columns: minmax(0, 20px) auto minmax(0, 20px);
   align-items: center;
   justify-content: center;
+  gap: 0;
   margin: 2px 8px 2px 0;
-  padding: 12px 20px;
+  padding: 12px 0;
   border-radius: 9999px;
   background-color: var(--accent-color);
   color: #fff;
@@ -101,6 +102,11 @@ main > .section.buy-bar-container:has(> .buy-bar-wrapper:only-child) {
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.3s cubic-bezier(0.8, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.buy-bar a.buy-bar-cta::before,
+.buy-bar a.buy-bar-cta::after {
+  content: "";
 }
 
 .buy-bar a.buy-bar-cta:hover,
@@ -133,7 +139,8 @@ main > .section.buy-bar-container:has(> .buy-bar-wrapper:only-child) {
 
   .buy-bar a.buy-bar-cta:any-link {
     margin: 0;
-    padding: 16px 32px;
+    grid-template-columns: minmax(0, 32px) auto minmax(0, 32px);
+    padding: 16px 0;
     line-height: 20px;
   }
 }

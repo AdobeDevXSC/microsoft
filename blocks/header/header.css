@@ -1,273 +1,791 @@
-/* header and nav layout */
+/* header bar: solid, scrolls with the page */
+header .header {
+  --header-bg: #1b1b1b;
+  --header-panel-bg: #2d2d2d;
+  --header-hover-bg: #333;
+  --header-footer-bg: #1f1f1f;
+  --header-divider: #484848;
+  --header-text: #fff;
+  --header-bar-height: 54px;
+  --header-font-size: 13px;
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1.65 4.65a.5.5 0 0 1 .7 0L8 10.29l5.65-5.64a.5.5 0 0 1 .7.7l-6 6a.5.5 0 0 1-.7 0l-6-6a.5.5 0 0 1 0-.7Z'/%3E%3C/svg%3E");
+  --magnifier: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M10 1.5a4.5 4.5 0 1 1-2.9 7.94l-5.25 5.25a.5.5 0 0 1-.7-.7L6.4 8.73A4.5 4.5 0 0 1 10 1.5Zm0 1a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z'/%3E%3C/svg%3E");
+}
+
 header .nav-wrapper {
-  background-color: var(--background-color);
+  position: relative;
+  z-index: 10;
   width: 100%;
-  z-index: 2;
-  position: fixed;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  font-family: var(--body-font-family);
+  font-size: var(--header-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: 1.5;
 }
 
 header nav {
+  position: relative;
   box-sizing: border-box;
-  display: grid;
-  grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
-  align-items: center;
-  gap: 0 24px;
-  margin: auto;
-  max-width: 1248px;
-  height: var(--nav-height);
-  padding: 0 24px;
-  font-family: var(--body-font-family);
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
-}
-
-@media (width >= 900px) {
-  header .nav-wrapper {
-    position: relative;
-  }
-
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
-  }
-}
-
-header nav p {
+header nav ul {
   margin: 0;
-  line-height: 1;
+  padding: 0;
+  list-style: none;
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: var(--header-text);
+  text-decoration: none;
 }
 
-/* hamburger */
-header nav .nav-hamburger {
-  grid-area: hamburger;
-  height: 22px;
-  display: flex;
-  align-items: center;
-}
-
-header nav .nav-hamburger button {
-  height: 22px;
+header nav button {
   margin: 0;
   border: 0;
   border-radius: 0;
-  padding: 0;
-  background-color: var(--background-color);
+  background: none;
   color: inherit;
-  overflow: initial;
-  text-overflow: initial;
-  white-space: initial;
-}
-
-header nav .nav-hamburger-icon,
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  box-sizing: border-box;
-  display: block;
-  position: relative;
-  width: 20px;
-}
-
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  content: '';
-  position: absolute;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
-  border-radius: 2px;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -6px;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 6px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::before,
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 3px;
-  left: 1px;
-  transform: rotate(45deg);
-  transform-origin: 2px 1px;
-  width: 24px;
-  height: 2px;
-  border-radius: 2px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: unset;
-  bottom: 3px;
-  transform: rotate(-45deg);
-}
-
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-}
-
-/* brand */
-header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
-}
-
-header nav .nav-brand img {
-  width: 128px;
-  height: auto;
-}
-
-/* sections */
-header nav .nav-sections {
-  grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
-  visibility: hidden;
-}
-
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
-}
-
-header nav .nav-sections ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-s);
-}
-
-header nav .nav-sections ul > li {
-  font-weight: 500;
-}
-
-header nav .nav-sections .nav-drop > button {
-  all: unset;
-  display: inline-block;
-  position: relative;
-  padding-right: 16px;
+  font: inherit;
   cursor: pointer;
 }
 
-header nav .nav-sections .nav-drop > button::after {
+header nav :focus-visible {
+  outline: 1px solid var(--header-text);
+  outline-offset: -3px;
+}
+
+/* mobile bar: hamburger · search · centred logo · avatar, then the site-name row */
+header .nav-bar {
+  display: grid;
+  grid-template-columns: 28px 26px 1fr auto;
+  grid-template-rows: var(--header-bar-height) 34px;
+  column-gap: 10px;
+  align-items: center;
+}
+
+/* divider between the bar and the site-name row (inset like the content) */
+header nav::before {
   content: '';
   position: absolute;
-  top: 0.5em;
-  right: 2px;
-  transform: rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid currentcolor;
-  border-radius: 0 1px 0 0;
-  border-width: 2px 2px 0 0;
+  top: calc(var(--header-bar-height) - 1px);
+  right: 15px;
+  left: 15px;
+  height: 1px;
+  background-color: var(--header-divider);
 }
 
-header nav .nav-sections .nav-drop > button[aria-expanded='true']::after {
-  top: unset;
-  bottom: 0.5em;
-  transform: rotate(315deg);
+header .nav-brand,
+header .nav-menus,
+header .nav-right,
+header .nav-tools {
+  display: contents;
 }
 
-header nav .nav-sections .nav-drop > button:focus-visible {
-  outline: 2px solid currentcolor;
-  outline-offset: 2px;
+header .nav-logo {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  align-items: center;
+  height: var(--header-bar-height);
+  padding: 0 14px 0 15px;
+  font-size: 16px;
+  transform: translateX(-50%);
 }
 
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
+header .nav-logo img {
+  display: block;
+  width: 108px;
+  height: auto;
 }
 
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
-}
-
-header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
+header .nav-site {
   display: none;
 }
 
-@media (width >= 900px) {
-  header nav .nav-sections {
-    display: block;
-    visibility: visible;
-    white-space: nowrap;
-  }
+header .nav-hamburger {
+  grid-area: 1 / 1;
+}
 
-  header nav .nav-sections ul {
-    display: flex;
-    gap: 24px;
-    margin: 0;
-  }
+header .nav-hamburger button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: var(--header-bar-height);
+}
 
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
-  }
+/* hamburger swaps to a cross while its menu is open (no animation, as on the source) */
+header .nav-hamburger-icon,
+header .nav-hamburger-icon::before,
+header .nav-hamburger-icon::after {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 1px;
+  background: currentcolor;
+}
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
-  }
+header .nav-hamburger-icon::before,
+header .nav-hamburger-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
 
-  header nav .nav-sections .default-content-wrapper > ul > li > button[aria-expanded='true'] + ul {
-    display: block;
-    position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
-  }
+header .nav-hamburger-icon::before {
+  top: -6px;
+}
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
-  }
+header .nav-hamburger-icon::after {
+  top: 6px;
+}
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+header .nav-hamburger button[aria-expanded='true'] .nav-hamburger-icon {
+  background-color: transparent;
+}
+
+header .nav-hamburger button[aria-expanded='true'] .nav-hamburger-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+header .nav-hamburger button[aria-expanded='true'] .nav-hamburger-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+header .nav-search-toggle {
+  display: flex;
+  grid-area: 1 / 2;
+  align-items: center;
+  justify-content: center;
+  height: var(--header-bar-height);
+  padding: 0;
+  font-size: var(--header-font-size);
+  white-space: nowrap;
+}
+
+header .nav-search-toggle span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+header .nav-search-toggle::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: currentcolor;
+  mask: var(--magnifier) center / contain no-repeat;
+}
+
+header .nav-account {
+  display: flex;
+  grid-area: 1 / 4;
+  align-items: center;
+  gap: 8px;
+  margin-right: 4px;
+}
+
+header .nav-signin {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  font-size: var(--header-font-size);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+header .nav-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--header-text);
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+header .nav-discover {
+  display: flex;
+  grid-area: 2 / 1 / 3 / -1;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  margin: 0;
+  padding: 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+  justify-self: start;
+  text-align: left;
+}
+
+header .nav-discover::after,
+header .nav-trigger::after,
+header .nav-mega-title::after {
+  content: '';
+  flex: none;
+  width: 12px;
+  height: 12px;
+  background: currentcolor;
+  mask: var(--chevron) center / contain no-repeat;
+}
+
+header .nav-discover[aria-expanded='true']::after,
+header .nav-trigger[aria-expanded='true']::after,
+header .nav-mega-title[aria-expanded='true']::after {
+  transform: rotate(180deg);
+}
+
+/* mobile menus: full-width accordion lists that overlay the page */
+header .nav-sections,
+header .nav-mega {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: var(--header-panel-bg);
+}
+
+header .nav-sections {
+  top: 100%;
+}
+
+header .nav-mega {
+  top: var(--header-bar-height);
+}
+
+header .nav-sections[hidden],
+header .nav-panel[hidden],
+header .nav-panel-list[hidden],
+header .nav-item[hidden] {
+  display: none;
+}
+
+header .nav-list {
+  display: flex;
+  flex-direction: column;
+}
+
+header .nav-trigger,
+header .nav-link,
+header .nav-mega-title,
+header .nav-mega-footer a:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 8px 13px 15px;
+  border-bottom: 0.5px solid var(--header-divider);
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: 0.32px;
+  text-align: left;
+}
+
+/* the global trigger itself lives behind the hamburger on mobile */
+header .nav-global > .nav-item > .nav-trigger {
+  display: none;
+}
+
+header .nav-panel .nav-panel-list,
+header .nav-mega-column > .nav-panel-list {
+  margin-left: 20px;
+}
+
+header .nav-mega-top .nav-panel-list {
+  margin-left: 0;
+}
+
+/* hover styles only where there is a real hover (taps leave no sticky underline) */
+@media (hover: hover) {
+  header .nav-trigger:hover span,
+  header .nav-link:hover,
+  header .nav-mega-footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
   }
 }
 
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
+/* search form (replaces the bar while open) */
+header .nav-search-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+header .nav-search-form[hidden] {
+  display: none;
+}
+
+header .nav-search-field {
+  position: relative;
+  flex: 1;
+}
+
+header .nav-search-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  padding: 0 40px 0 11px;
+  border: 1px solid var(--accent-color);
+  border-radius: 0;
+  background-color: var(--header-panel-bg);
+  color: var(--header-text);
+  font: inherit;
+  font-size: 16px;
+}
+
+header .nav-search-input::placeholder {
+  color: #a6a6a6;
+}
+
+header .nav-search-input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+header .nav-search-submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+
+  /* as on the source: transparent at rest and on hover (no hover fill); the transition is declared there too */
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+/* source keyboard focus on the submit: 1px dashed white, 2px outside */
+header .nav-search-submit:focus-visible {
+  outline: 1px dashed var(--header-text);
+  outline-offset: 2px;
+}
+
+header .nav-search-submit::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  background: var(--header-text);
+  mask: var(--magnifier) center / contain no-repeat;
+}
+
+/* mobile: the cancel control is a back arrow before the field */
+header .nav-search-cancel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: -1;
+  box-sizing: border-box;
+  width: 35px;
+  height: 36px;
+  padding: 0;
+  font-size: 16px;
+}
+
+header .nav-search-cancel .nav-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+header .nav-search-cancel::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M7.35 2.65a.5.5 0 0 1 0 .7L3.2 7.5H14.5a.5.5 0 0 1 0 1H3.2l4.15 4.15a.5.5 0 0 1-.7.7l-5-5a.5.5 0 0 1 0-.7l5-5a.5.5 0 0 1 .7 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+header nav.search-open .nav-hamburger,
+header nav.search-open .nav-search-toggle,
+header nav.search-open .nav-logo,
+header nav.search-open .nav-account {
+  visibility: hidden;
+}
+
+header nav.search-open .nav-search-form {
+  position: absolute;
+  inset: 0 30px auto 20px;
+  height: var(--header-bar-height);
+}
+
+@media (width >= 900px) {
+  header nav {
+    --nav-pad: 24px;
+
+    padding: 0 var(--nav-pad);
+  }
+
+  header .nav-bar {
+    display: flex;
+    column-gap: 0;
+    align-items: center;
+    height: var(--header-bar-height);
+  }
+
+  header nav::before {
+    display: none;
+  }
+
+  header .nav-hamburger,
+  header .nav-discover,
+  header .nav-mobile-only {
+    display: none;
+  }
+
+  header .nav-brand {
+    display: flex;
+    flex: none;
+    align-items: center;
+    height: var(--header-bar-height);
+  }
+
+  header .nav-logo {
+    position: static;
+    height: 100%;
+    padding: 0 14px 0 15px;
+    font-size: 16px;
+    transform: none;
+  }
+
+  header .nav-site {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    margin-left: 16px;
+    padding: 0 6px 0 10px;
+    font-family: 'Segoe UI', var(--body-font-family);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    white-space: nowrap;
+  }
+
+  header .nav-site::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -9px;
+    width: 2px;
+    height: 24px;
+    background-color: var(--header-text);
+  }
+
+  header .nav-site:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  header .nav-menus {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    min-width: 0;
+    height: 100%;
+  }
+
+  /* not overflow-clipped: dropdowns hang below it (the overflow menu keeps items in bounds) */
+  header .nav-sections,
+  header .nav-sections[hidden] {
+    display: block;
+    position: static;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    margin: 0 10px;
+    background: none;
+  }
+
+  header .nav-right,
+  header .nav-tools {
+    display: flex;
+    flex: none;
+    align-items: center;
+    height: 100%;
+  }
+
+  header .nav-list {
+    flex-direction: row;
+    height: 100%;
+  }
+
+  header .nav-sections > .nav-list {
+    gap: 5px;
+    width: max-content;
+  }
+
+  header .nav-list > .nav-item {
+    height: 100%;
+  }
+
+  header .nav-trigger,
+  header .nav-link,
+  header .nav-mega-footer a:any-link {
+    justify-content: flex-start;
+    gap: 5px;
+    min-height: 0;
+    padding: 12px 24px;
+    border-bottom: 0;
+    font-size: var(--header-font-size);
+    line-height: 19.5px;
+    white-space: nowrap;
+  }
+
+  header .nav-trigger::after {
+    width: 8px;
+    height: 8px;
+  }
+
+  header .nav-trigger[aria-expanded='true']::after {
+    transform: none;
+  }
+
+  header .nav-trigger[aria-expanded='true'] {
+    background-color: var(--header-panel-bg);
+  }
+
+  header .nav-trigger[aria-expanded='true'] span {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  header .nav-search-toggle {
+    gap: 5px;
+    height: 100%;
+    margin-left: 9px;
+    padding: 0 8px;
+    border: 1px solid transparent;
+  }
+
+  header .nav-search-toggle:hover span {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  /* below 1400px the search and sign-in labels collapse to icons (as on the source) */
+  header .nav-account {
+    margin-right: -8px;
+    padding: 0 0 0 18px;
+  }
+
+  /* panels */
+  header .nav-panel {
+    background-color: var(--header-panel-bg);
+  }
+
+  header .nav-panel .nav-panel-list,
+  header .nav-mega-column > .nav-panel-list {
+    margin-left: 0;
+  }
+
+  header .nav-panel .nav-link {
+    padding: 12px 24px;
+    white-space: normal;
+  }
+
+  /* dropdowns sit under their trigger and float over the page */
+  header .nav-drop {
+    position: relative;
+  }
+
+  header .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    min-width: 195px;
+    border-bottom: 2px solid #000;
+  }
+
+  header .nav-dropdown .nav-link {
+    padding: 17px 24px;
+    white-space: nowrap;
+  }
+
+  /* overflowed dropdowns expand in place inside the overflow menu */
+  header .nav-dropdown .nav-drop {
+    position: static;
+    height: auto;
+  }
+
+  header .nav-dropdown .nav-trigger {
+    height: auto;
+    padding: 17px 24px;
+  }
+
+  header .nav-dropdown .nav-dropdown {
+    position: static;
+    min-width: 0;
+    border: 0;
+    background-color: var(--header-hover-bg);
+  }
+
+  header .nav-dropdown .nav-dropdown .nav-link {
+    padding-left: 36px;
+  }
+
+  header .nav-panel .nav-link:hover {
+    background-color: var(--header-hover-bg);
+  }
+
+  /* megamenu spans most of the viewport, pinned 15px from its right edge */
+  header .nav-menu-mega {
+    position: static;
+  }
+
+  header .nav-mega {
+    top: 100%;
+    right: 15px;
+    left: auto;
+    width: min(1170px, calc(100vw - 30px));
+    border-bottom: 2px solid #000;
+  }
+
+  header .nav-mega-top .nav-panel-list {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--header-text);
+  }
+
+  header .nav-mega-top .nav-panel-list .nav-link {
+    padding: 12px 24px;
+    white-space: nowrap;
+  }
+
+  /* fixed-width columns that wrap when the panel is narrower than six columns */
+  header .nav-mega-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  header .nav-mega-column {
+    box-sizing: border-box;
+    width: 195px;
+    padding-bottom: 10px;
+  }
+
+  header .nav-mega-title,
+  header .nav-mega-title:disabled {
+    min-height: 0;
+    padding: 12px 12px 12px 24px;
+    border-bottom: 0;
+    color: inherit;
+    font-size: var(--header-font-size);
+    font-weight: 700;
+    line-height: 19.5px;
+    cursor: default;
+  }
+
+  header .nav-mega-title::after {
+    display: none;
+  }
+
+  header .nav-mega-footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--header-footer-bg);
+  }
+
+  header .nav-mega-footer a:any-link {
+    width: auto;
+    padding: 9px 24px;
+  }
+
+  /* search: the open form spans from just after the logo to the content edge */
+  header nav.search-open .nav-menus {
+    display: none;
+  }
+
+  header nav.search-open .nav-hamburger,
+  header nav.search-open .nav-search-toggle,
+  header nav.search-open .nav-logo,
+  header nav.search-open .nav-account {
+    visibility: visible;
+  }
+
+  header nav.search-open .nav-search-form {
+    inset: 0 var(--nav-pad) auto calc(var(--nav-pad) + 147px);
+    justify-content: center;
+    gap: 5px;
+  }
+
+  header .nav-search-field {
+    max-width: 1300px;
+  }
+
+  header .nav-search-cancel {
+    order: 0;
+    width: auto;
+    padding: 0 10px;
+    border: 1px solid var(--header-text);
+  }
+
+  header .nav-search-cancel::before {
+    display: none;
+  }
+
+  header .nav-search-cancel .nav-label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+  }
+
+  header .nav-global > .nav-item > .nav-trigger {
+    display: flex;
+  }
+
+  /* bar-level items (not panel links) */
+  header .nav-list > .nav-item > .nav-trigger,
+  header .nav-list > .nav-item > .nav-link {
+    height: 100%;
+    padding: 0 8px;
+    border: 1px solid transparent;
+  }
+}
+
+@media (width >= 1200px) {
+  /* content is capped at 1600px; the bar itself stays full width */
+  header nav {
+    --nav-pad: max(5%, calc((100% - 1600px) / 2));
+  }
+}
+
+/* breakpoint-exception: the source header reveals its Search / Sign in labels at exactly 1400px */
+@media (width >= 1400px) {
+  header .nav-account {
+    margin-right: 0;
+  }
+
+  header .nav-search-toggle span,
+  header .nav-signin {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+  }
 }

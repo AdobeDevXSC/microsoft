@@ -60,7 +60,7 @@ main .footnotes-container > .default-content-wrapper + .footnotes-wrapper .footn
   display: grid;
   grid-column: 1 / -1;
   grid-template-columns: subgrid;
-  scroll-margin-top: calc(var(--nav-height) + var(--section-nav-height) + 16px);
+  scroll-margin-top: calc(var(--anchor-offset) + 16px);
 }
 
 .footnotes .footnotes-item:focus {

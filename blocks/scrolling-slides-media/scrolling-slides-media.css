@@ -9,24 +9,58 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
   margin-top: 120px;
 }
 
-/* mobile first: slides stack as tall cards, nothing pinned */
+/* mobile first: pinned 374:724 stage, one viewport of scroll per slide (source: 300lvh for 3 slides) */
 .scrolling-slides-media {
+  container-type: inline-size;
   color: var(--text-color);
 }
 
-.scrolling-slides-media .scrolling-slides-media-frame {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.scrolling-slides-media .scrolling-slides-media-track {
+  position: relative;
+  height: calc(var(--slide-count, 1) * 100lvh);
 }
 
-.scrolling-slides-media .scrolling-slides-media-slide {
+/* sticky offset centres the frame (60px at 375x812), never above the sticky section nav */
+.scrolling-slides-media .scrolling-slides-media-stage {
+  --ssm-sticky-top: max(
+    calc(var(--section-nav-height, 44px) + 16px),
+    calc((100lvh - min(100cqw * 724 / 374, 100lvh - 120px)) / 2)
+  );
+
+  position: sticky;
+  top: var(--ssm-sticky-top);
+  padding-bottom: var(--ssm-sticky-top);
+}
+
+/* dashes above the copy at the top of the frame; slides share one grid cell, media layers fill the frame */
+.scrolling-slides-media .scrolling-slides-media-frame {
   position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px 0;
+  width: 100%;
   aspect-ratio: 374 / 724;
   max-height: calc(100lvh - 120px);
+  padding-top: 64px;
   overflow: hidden;
   border-radius: 20px;
   isolation: isolate;
+}
+
+.scrolling-slides-media .scrolling-slides-media-slide {
+  grid-area: 2 / 1;
+  align-self: start;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0s 0.4s;
+}
+
+.scrolling-slides-media .scrolling-slides-media-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s;
 }
 
 .scrolling-slides-media .scrolling-slides-media-media {
@@ -68,10 +102,7 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
 }
 
 .scrolling-slides-media .scrolling-slides-media-text {
-  position: absolute;
-  top: 64px;
-  right: 0;
-  left: 0;
+  position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -99,9 +130,57 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
   letter-spacing: 0.01em;
 }
 
-.scrolling-slides-media .scrolling-slides-media-triggers,
 .scrolling-slides-media .scrolling-slides-media-nav {
-  display: none;
+  position: relative;
+  z-index: 2;
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  padding: 0 20px;
+}
+
+/* progress dashes: upcoming 40% white, done and current white, current one long */
+.scrolling-slides-media .scrolling-slides-media-dot {
+  width: 30px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(currentcolor, currentcolor) center / 100% 2px no-repeat;
+  color: rgb(255 255 255 / 40%);
+  cursor: pointer;
+  transition: width 0.4s, color 0.4s;
+}
+
+.scrolling-slides-media .scrolling-slides-media-dot:has(~ [aria-current="true"]),
+.scrolling-slides-media .scrolling-slides-media-dot[aria-current="true"] {
+  color: var(--text-color);
+}
+
+.scrolling-slides-media .scrolling-slides-media-dot[aria-current="true"] {
+  width: 80px;
+}
+
+/* the pinned range (track minus one viewport) splits evenly per slide; the outer
+   half-viewports belong to the first and last slide (source: switches at y+541 / y+1083) */
+.scrolling-slides-media .scrolling-slides-media-triggers {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.scrolling-slides-media .scrolling-slides-media-trigger {
+  flex: 1 1 0;
+}
+
+.scrolling-slides-media .scrolling-slides-media-trigger:first-child,
+.scrolling-slides-media .scrolling-slides-media-trigger:last-child {
+  flex-basis: 50lvh;
 }
 
 @media (width >= 768px) {
@@ -109,12 +188,20 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
     padding: 0 20px;
   }
 
-  .scrolling-slides-media .scrolling-slides-media-slide {
-    aspect-ratio: 2 / 3;
+  .scrolling-slides-media .scrolling-slides-media-stage {
+    --ssm-sticky-top: max(
+      calc(var(--section-nav-height, 44px) + 16px),
+      calc((100lvh - min(100cqw * 3 / 2, 100lvh - 120px)) / 2)
+    );
   }
 
-  .scrolling-slides-media .scrolling-slides-media-text {
-    top: 50px;
+  .scrolling-slides-media .scrolling-slides-media-frame {
+    aspect-ratio: 2 / 3;
+    padding-top: 50px;
+  }
+
+  .scrolling-slides-media .scrolling-slides-media-text,
+  .scrolling-slides-media .scrolling-slides-media-nav {
     padding: 0 40px;
   }
 
@@ -128,65 +215,32 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
   }
 }
 
-/* desktop: pinned 16:9 stage, one viewport of scroll per slide */
+/* desktop: pinned 16:9 stage, copy and dashes at the bottom left */
 @media (width >= 900px) {
   main .section > .scrolling-slides-media-wrapper {
     padding: 0 28px;
   }
 
-  .scrolling-slides-media {
-    container-type: inline-size;
-  }
-
   .scrolling-slides-media .scrolling-slides-media-track {
-    position: relative;
     height: calc(var(--slide-count, 1) * 100svh);
   }
 
   /* sticky offset centres the frame in the viewport while pinned */
   .scrolling-slides-media .scrolling-slides-media-stage {
     --ssm-sticky-top: calc((100svh - min(100cqw * 9 / 16, 100svh - 120px)) / 2);
-
-    position: sticky;
-    top: var(--ssm-sticky-top);
-    padding-bottom: var(--ssm-sticky-top);
   }
 
-  /* slides share one grid cell under the dashes; media layers fill the frame */
   .scrolling-slides-media .scrolling-slides-media-frame {
-    position: relative;
-    box-sizing: border-box;
-    display: grid;
     grid-template-rows: 1fr auto auto;
     grid-template-columns: minmax(0, 562px);
     gap: 20px 0;
-    width: 100%;
     aspect-ratio: 16 / 9;
     max-height: calc(100svh - 120px);
-    padding-bottom: 60px;
-    overflow: hidden;
-    border-radius: 20px;
-    isolation: isolate;
+    padding: 0 0 60px;
   }
 
   .scrolling-slides-media .scrolling-slides-media-slide {
-    position: static;
     grid-area: 3 / 1;
-    align-self: start;
-    aspect-ratio: auto;
-    max-height: none;
-    overflow: visible;
-    border-radius: 0;
-    isolation: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s, visibility 0s 0.4s;
-  }
-
-  .scrolling-slides-media .scrolling-slides-media-slide.is-active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.4s;
   }
 
   .scrolling-slides-media .video-media .video-toggle {
@@ -195,8 +249,6 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
   }
 
   .scrolling-slides-media .scrolling-slides-media-text {
-    position: relative;
-    inset: auto;
     gap: 20px;
     padding: 0 64px;
   }
@@ -210,53 +262,18 @@ main .section > .default-content-wrapper + .scrolling-slides-media-wrapper {
   }
 
   .scrolling-slides-media .scrolling-slides-media-nav {
-    position: relative;
-    z-index: 2;
     grid-area: 2 / 1;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    height: 40px;
     padding: 0 64px;
   }
 
-  /* progress dashes: upcoming 40% white, done and current white, current one long */
-  .scrolling-slides-media .scrolling-slides-media-dot {
-    width: 30px;
-    height: 40px;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: linear-gradient(currentcolor, currentcolor) center / 100% 2px no-repeat;
-    color: rgb(255 255 255 / 40%);
-    cursor: pointer;
-    transition: width 0.4s, color 0.4s;
-  }
-
-  .scrolling-slides-media .scrolling-slides-media-dot:has(~ [aria-current="true"]),
-  .scrolling-slides-media .scrolling-slides-media-dot[aria-current="true"] {
-    color: var(--text-color);
-  }
-
-  .scrolling-slides-media .scrolling-slides-media-dot[aria-current="true"] {
-    width: 80px;
-  }
-
-  .scrolling-slides-media .scrolling-slides-media-triggers {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    pointer-events: none;
-  }
-
-  .scrolling-slides-media .scrolling-slides-media-trigger {
-    flex: 1;
+  /* desktop: one viewport of track per slide */
+  .scrolling-slides-media .scrolling-slides-media-trigger:first-child,
+  .scrolling-slides-media .scrolling-slides-media-trigger:last-child {
+    flex-basis: 0;
   }
 }
 
-@media (width >= 900px) and (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   .scrolling-slides-media .scrolling-slides-media-slide,
   .scrolling-slides-media .scrolling-slides-media-slide.is-active,
   .scrolling-slides-media .scrolling-slides-media-dot {
