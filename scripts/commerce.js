@@ -170,10 +170,15 @@ export function getProductLink(urlKey, sku) {
 }
 
 /**
- * Gets the product SKU from page metadata, falling back to `/products/{urlKey}/{sku}`.
+ * Gets the product SKU from a `sku` row in the Product Details block, then page metadata,
+ * falling back to `/products/{urlKey}/{sku}`.
  * @returns {string|undefined} The SKU
  */
 export function getProductSku() {
+  const row = [...document.querySelectorAll('.product-details > div')]
+    .find((r) => r.children[0]?.textContent.trim().toLowerCase() === 'sku');
+  const blockSku = row?.children[1]?.textContent.trim();
+  if (blockSku) return blockSku;
   if (getMetadata('sku')) return getMetadata('sku');
   return window.location.pathname.match(/\/products\/[\w-]+\/([\w-]+)$/)?.[1];
 }
