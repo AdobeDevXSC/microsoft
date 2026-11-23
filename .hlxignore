@@ -8,3 +8,7 @@ test/*
 sync-block-collection.sh
 tools/
 aco/
+
+*.d.ts
+*.map
+postinstall.js

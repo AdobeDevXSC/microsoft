@@ -14,6 +14,9 @@ import {
   toClassName,
 } from './aem.js';
 
+// pages with these blocks load scripts/commerce.js and the drop-ins; other pages skip them
+const COMMERCE_BLOCKS = '.product-details, .product-list-page, .product-recommendations';
+
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
     createHTML: (s) => s, // avoid stack overflow
@@ -206,7 +209,25 @@ async function loadEager(doc) {
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
+    const commerce = main.querySelector(COMMERCE_BLOCKS) ? await import('./commerce.js') : null;
+    if (commerce) {
+      try {
+        await commerce.initializeCommerce();
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.error('Commerce initialization failed', e);
+      }
+    }
     decorateMain(main);
+    if (commerce) {
+      try {
+        if (main.querySelector('.product-details')) await import('./initializers/pdp.js');
+        await commerce.loadCommerceEager();
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.error('Commerce eager loading failed', e);
+      }
+    }
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
@@ -231,6 +252,9 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+  if (main?.querySelector(COMMERCE_BLOCKS)) {
+    import('./commerce.js').then((commerce) => commerce.loadCommerceLazy());
+  }
 
   const { hash } = window.location;
   if (hash && main?.querySelector('.lazy-fragment-pending')) {
