@@ -6,7 +6,7 @@ package.json
 package-lock.json
 test/*
 sync-block-collection.sh
-tools/
+/tools/
 aco/
 
 *.d.ts
