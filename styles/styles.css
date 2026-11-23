@@ -505,3 +505,48 @@ main .section.highlight {
     transition: none;
   }
 }
+
+/* commerce drop-ins: Microsoft Store look (light surface, Segoe, #0067b8 accent).
+   The drop-ins set default tokens on each `.dropin-design` container; these overrides win inside commerce blocks. */
+.product-details,
+.product-list-page,
+.product-recommendations,
+.product-details .dropin-design,
+.product-list-page .dropin-design,
+.product-recommendations .dropin-design {
+  --type-base-font-family: var(--body-font-family);
+  --type-fixed-font-family: var(--body-font-family);
+  --color-brand-300: #2b88d8;
+  --color-brand-500: #0067b8;
+  --color-brand-600: #005da6;
+  --color-brand-700: #005293;
+  --color-neutral-50: #fff;
+  --color-neutral-100: #f2f2f2;
+  --color-neutral-200: #ebebeb;
+  --color-neutral-300: #d2d2d2;
+  --color-neutral-400: #b3b3b3;
+  --color-neutral-500: #8a8886;
+  --color-neutral-600: #616161;
+  --color-neutral-700: #505050;
+  --color-neutral-800: #2f2f2f;
+  --color-neutral-900: #262626;
+  --shape-border-radius-1: 4px;
+  --shape-border-radius-2: 4px;
+  --shape-border-radius-3: 8px;
+}
+
+.product-details,
+.product-list-page,
+.product-recommendations {
+  /* full-bleed light surface inside the dark site */
+  background: var(--color-neutral-50);
+  box-shadow: 0 0 0 100vmax var(--color-neutral-50);
+  clip-path: inset(0 -100vmax);
+  color: var(--color-neutral-900);
+}
+
+.product-details a:any-link:not(.button),
+.product-list-page a:any-link:not(.button),
+.product-recommendations a:any-link:not(.button) {
+  color: var(--color-brand-500);
+}

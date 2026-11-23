@@ -1,0 +1,25 @@
+{
+  "variantName": "product-recommendations",
+  "baseBlock": "product-recommendations",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "purpose": "commerce-recommendations",
+    "imagePattern": "product-gallery",
+    "structure": "key/value rows: recid (required), currentsku, currentprice"
+  },
+  "contentPattern": {
+    "structure": "key/value rows: recid (required), currentsku, currentprice",
+    "imagePattern": "product-gallery",
+    "density": "medium",
+    "colorScheme": "light"
+  },
+  "usage": {
+    "pagesUsing": [],
+    "reuseCount": 0,
+    "lastUsed": null
+  },
+  "options": [],
+  "memberVariantIds": ["product-recommendations"]
+}

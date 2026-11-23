@@ -1,0 +1,32 @@
+[
+  {
+    "name": "XBOX",
+    "slug": "xbox",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
+  },
+  {
+    "name": "XBOX - Accessories",
+    "slug": "xbox/accessories",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
+  },
+  {
+    "name": "XBOX - Accessories - Controllers",
+    "slug": "xbox/accessories/controllers",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
+  }
+]

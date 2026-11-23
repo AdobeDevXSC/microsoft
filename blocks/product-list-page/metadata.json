@@ -1,0 +1,25 @@
+{
+  "variantName": "product-list-page",
+  "baseBlock": "product-list-page",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "purpose": "commerce-plp",
+    "imagePattern": "product-gallery",
+    "structure": "optional key/value rows: urlpath, category, pagesize"
+  },
+  "contentPattern": {
+    "structure": "optional key/value rows: urlpath, category, pagesize",
+    "imagePattern": "product-gallery",
+    "density": "medium",
+    "colorScheme": "light"
+  },
+  "usage": {
+    "pagesUsing": [],
+    "reuseCount": 0,
+    "lastUsed": null
+  },
+  "options": [],
+  "memberVariantIds": ["product-list-page"]
+}

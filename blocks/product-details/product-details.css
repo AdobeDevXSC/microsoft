@@ -1,0 +1,123 @@
+/* product-details: Microsoft Store style PDP.
+   Markup comes from the @dropins/storefront-pdp containers; only the layout is ours. */
+
+.product-details {
+  display: grid;
+  gap: 48px;
+  padding: 24px 0 48px;
+}
+
+.product-details__wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+.product-details__gallery {
+  border-radius: 8px;
+  background: var(--color-neutral-100);
+  overflow: clip;
+}
+
+.product-details__gallery .pdp-carousel {
+  max-height: 70vh;
+}
+
+.product-details__summary {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.product-details__summary > :empty {
+  display: none;
+}
+
+.product-details__header .pdp-header__title {
+  margin: 0;
+  font: 600 28px/36px var(--type-base-font-family);
+  color: var(--color-neutral-900);
+}
+
+.product-details__header .pdp-header__sku {
+  display: none;
+}
+
+.product-details__price .pdp-price-range,
+.product-details__price .dropin-price {
+  font: 600 24px/32px var(--type-base-font-family);
+  color: var(--color-neutral-900);
+}
+
+.product-details__short-description {
+  color: var(--color-neutral-800);
+}
+
+.product-details__buttons a.button.primary {
+  width: 100%;
+  margin: 8px 0 0;
+  border-radius: 4px;
+  background: var(--color-brand-500);
+  color: var(--color-neutral-50);
+}
+
+.product-details__buttons a.button.primary:hover,
+.product-details__buttons a.button.primary:focus-visible {
+  background: var(--color-brand-700);
+  color: var(--color-neutral-50);
+}
+
+.product-details__overview {
+  display: grid;
+  gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-neutral-300);
+}
+
+.product-details__overview > :empty {
+  display: none;
+}
+
+.product-details__description .pdp-product__description h2,
+.product-details__attributes .pdp-attributes__title {
+  margin: 0 0 16px;
+  font: 600 24px/32px var(--type-base-font-family);
+  color: var(--color-neutral-900);
+}
+
+.product-details__attributes ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-details__attributes li {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) 2fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-neutral-300);
+}
+
+@media (width >= 900px) {
+  .product-details__wrapper {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 48px;
+  }
+
+  .product-details__summary {
+    position: sticky;
+    top: 24px;
+  }
+
+  .product-details__buttons a.button.primary {
+    width: auto;
+    min-width: 240px;
+  }
+
+  .product-details__overview {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 48px;
+  }
+}

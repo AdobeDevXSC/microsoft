@@ -1,0 +1,25 @@
+{
+  "variantName": "product-details",
+  "baseBlock": "product-details",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "purpose": "commerce-pdp",
+    "imagePattern": "product-gallery",
+    "structure": "empty block; data loaded from ACO via the PDP drop-in"
+  },
+  "contentPattern": {
+    "structure": "empty block; data loaded from ACO via the PDP drop-in",
+    "imagePattern": "product-gallery",
+    "density": "medium",
+    "colorScheme": "light"
+  },
+  "usage": {
+    "pagesUsing": [],
+    "reuseCount": 0,
+    "lastUsed": null
+  },
+  "options": [],
+  "memberVariantIds": ["product-details"]
+}

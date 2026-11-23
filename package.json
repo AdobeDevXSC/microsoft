@@ -7,7 +7,9 @@
     "lint:js": "eslint .",
     "lint:css": "stylelint \"blocks/**/*.css\" \"styles/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix"
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
+    "start": "npx -y @adobe/aem-cli up",
+    "install:dropins": "node postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,12 @@
     "eslint-plugin-import": "2.32.0",
     "stylelint": "17.16.0",
     "stylelint-config-standard": "40.0.0"
+  },
+  "dependencies": {
+    "@adobe/adobe-client-data-layer": "3.0.1",
+    "@dropins/storefront-pdp": "3.3.2",
+    "@dropins/storefront-product-discovery": "3.1.2",
+    "@dropins/storefront-recommendations": "4.0.4",
+    "@dropins/tools": "2.1.0"
   }
 }

@@ -1,0 +1,320 @@
+[
+  {
+    "code": "sku",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "SKU",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": true,
+    "searchWeight": 1,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "name",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Name",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": false,
+    "sortable": true,
+    "searchable": true,
+    "searchWeight": 5,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "description",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Description",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "shortDescription",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Short Description",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": true,
+    "searchWeight": 1,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "brand",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Brand",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": true,
+    "searchWeight": 3,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "product_family",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Product Family",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": true,
+    "searchWeight": 2,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "product_type",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Product Type",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": true,
+    "searchWeight": 2,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "badge",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Badge",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "connectivity",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Connectivity",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "compatible_with",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Compatible With",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": true,
+    "searchWeight": 2,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "includes",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Includes",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "battery",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Battery",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "battery_life_hours",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Battery Life (hours)",
+    "dataType": "DECIMAL",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": true,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "dimensions",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Dimensions",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "weight_g",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Weight (g)",
+    "dataType": "DECIMAL",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": false,
+    "sortable": true,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "additional_features",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Additional Features",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "price",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Price",
+    "dataType": "DECIMAL",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": true,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  }
+]

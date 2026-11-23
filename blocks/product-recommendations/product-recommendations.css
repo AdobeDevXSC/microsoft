@@ -1,0 +1,20 @@
+.product-recommendations {
+  min-height: 200px;
+  padding: 32px 0;
+}
+
+.product-recommendations .product-recommendations__list h2 {
+  margin: 0 0 24px;
+  font: 600 24px/32px var(--type-base-font-family);
+  color: var(--color-neutral-900);
+}
+
+.product-recommendations a {
+  color: var(--color-neutral-900);
+  text-decoration: none;
+}
+
+.product-recommendations a:hover,
+.product-recommendations a:focus-visible {
+  text-decoration: underline;
+}
