@@ -28,5 +28,65 @@
     "families": [
       "menu"
     ]
+  },
+  {
+    "name": "Surface",
+    "slug": "surface",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
+  },
+  {
+    "name": "Surface - Laptops",
+    "slug": "surface/laptops",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
+  },
+  {
+    "name": "Surface - 2-in-1",
+    "slug": "surface/2-in-1",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
+  },
+  {
+    "name": "Surface - Business",
+    "slug": "surface/business",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
+  },
+  {
+    "name": "Deals",
+    "slug": "deals",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
+  },
+  {
+    "name": "Deals - Black Friday",
+    "slug": "deals/black-friday",
+    "source": {
+      "locale": "en-US"
+    },
+    "families": [
+      "menu"
+    ]
   }
 ]

@@ -167,5 +167,2256 @@
         "origin": "microsoft-store-sku-id"
       }
     ]
+  },
+  {
+    "sku": "surface-pro-13-inch-12th-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Pro, 13-inch (12th Edition)",
+    "slug": "surface-pro-13-inch-12th-edition",
+    "status": "ENABLED",
+    "description": "<p>2026 Surface Pro, 13-inch (12th Ed) — a Snapdragon X2-powered 2-in-1 with Windows 11, pen and touch, built-in NPU, Wi-Fi 7, optional OLED PixelSense display, up to 64 GB memory, and removable SSD storage.</p><p>For students, tablet mode and pen input support handwritten notes, diagrams, and freehand sketches in class and studio, while the lightweight build and all-day battery carry through a full campus day without a charger or a separate drawing device.</p><p>For artists and digital illustrators, the Slim Pen, optional OLED PixelSense display, and 120Hz touch surface deliver responsive drawing, vibrant color, and precise inking without a separate graphics tablet.</p><p>For travelers, the lightweight tablet form, kickstand, optional OLED display, and all-day battery with Fast Charging support entertainment, browsing, and staying connected through airports, transit, and hotel stays without heavy gear.</p><p>For beginners, touch, keyboard, pen, and voice interactions offer multiple natural ways to get started, letting new users engage with the device in whatever way feels most comfortable without a steep learning curve.</p>",
+    "shortDescription": "2026 Surface Pro, 13-inch (12th Ed) — a Snapdragon X2-powered 2-in-1 with Windows 11, pen and touch, built-in NPU, Wi-Fi 7, optional OLED PixelSense display, up to 64 GB memory, and removable SSD storage.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Pro, 13-inch (12th Edition) - See Price & Availability | Microsoft Store",
+      "description": "2026 Surface Pro, 13-inch (12th Ed) — a Snapdragon X2-powered 2-in-1 with Windows 11, pen and touch, built-in NPU, Wi-Fi 7, optional OLED PixelSense display, up to 64 GB memory, and removable SSD storage.",
+      "keywords": [
+        "surface",
+        "2-in-1",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "2-in-1"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save up to $700"
+        ]
+      },
+      {
+        "code": "processor",
+        "values": [
+          "Snapdragon® X2 Plus (10 Core), with LCD display"
+        ]
+      },
+      {
+        "code": "memory",
+        "values": [
+          "16GB RAM"
+        ]
+      },
+      {
+        "code": "storage",
+        "values": [
+          "256GB SSD"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Platinum"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "13\""
+        ]
+      },
+      {
+        "code": "configuration_options",
+        "values": [
+          "Processor: Snapdragon® X2 Plus (10 Core), with LCD display, Snapdragon® X2 Elite (12 Core), with OLED display",
+          "Color: Dune, Platinum, Black",
+          "Memory: 16GB RAM, 24GB RAM, 32GB RAM, 64GB RAM",
+          "Storage: 256GB SSD, 512GB SSD, 1TB SSD"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Pro-Snapdragon-12Ed-MD-Front",
+        "label": "Surface Pro, 13-inch (12th Edition), front view",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Pro-Snapdragon-12Ed-MD-Front-Left",
+        "label": "Surface Pro, 13-inch (12th Edition), front left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b02-Surface-Pro-Snapdragon-12Ed-MD-Rear-Left",
+        "label": "Surface Pro, 13-inch (12th Edition), rear left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b03-Surface-Pro-Snapdragon-12Ed-MD-Right-Profile",
+        "label": "Surface Pro, 13-inch (12th Edition), right view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Pro-Snapdragon-12Ed-MB-Front",
+        "label": "Surface Pro, 13-inch (12th Edition), front view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Pro-Snapdragon-12Ed-MB-Front-Left",
+        "label": "Surface Pro, 13-inch (12th Edition), front left view"
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/2-in-1"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8MZBMMCJZPMR",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "94G1",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "surface-laptop-13-8-inch-8th-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Laptop, 13.8-inch (8th Edition)",
+    "slug": "surface-laptop-13-8-inch-8th-edition",
+    "status": "ENABLED",
+    "description": "<p>2026 Surface Laptop, 13.8-inch (8th Ed) — a Snapdragon X2 laptop with Windows 11, a 120Hz HDR touchscreen, built-in NPU, Wi-Fi 7, up to 64 GB memory, and removable SSD storage.</p><p>For students, the lightweight 13.8-inch build, built-in NPU for AI study tools, and all-day battery sustain lectures, assignments, and research sessions through a full campus or school day without searching for a charger.</p><p>For content creators, the built-in NPU for AI-assisted creative tools, all-day battery, and 13.8-inch screen supports photo editing, video work, and content production across locations without needing a fixed desk or a power outlet nearby.</p><p>For gamers, the Snapdragon X2 processor performance, 120Hz HDR touchscreen, and all-day battery support casual and on-the-go gaming sessions through a full day of play without tethering to a power outlet.</p><p>For everyday home users, the 120Hz HDR touchscreen, all-day battery, and fast Wi-Fi 7 deliver smooth and responsive streaming, browsing, and daily computing from any room without planning around a charger.</p>",
+    "shortDescription": "2026 Surface Laptop, 13.8-inch (8th Ed) — a Snapdragon X2 laptop with Windows 11, a 120Hz HDR touchscreen, built-in NPU, Wi-Fi 7, up to 64 GB memory, and removable SSD storage.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Laptop, 13.8-inch (8th Edition) - See Price & Availability | Microsoft Store",
+      "description": "2026 Surface Laptop, 13.8-inch (8th Ed) — a Snapdragon X2 laptop with Windows 11, a 120Hz HDR touchscreen, built-in NPU, Wi-Fi 7, up to 64 GB memory, and removable SSD storage.",
+      "keywords": [
+        "surface",
+        "laptop",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Laptop"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save up to $700"
+        ]
+      },
+      {
+        "code": "processor",
+        "values": [
+          "Snapdragon® X2 Plus (10 Core)"
+        ]
+      },
+      {
+        "code": "memory",
+        "values": [
+          "16GB RAM"
+        ]
+      },
+      {
+        "code": "storage",
+        "values": [
+          "512GB SSD"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Jade"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "13.8\""
+        ]
+      },
+      {
+        "code": "configuration_options",
+        "values": [
+          "Processor: Snapdragon® X2 Plus (10 Core), Snapdragon® X2 Elite (12 Core)",
+          "Color: Jade, Platinum, Dune, Black",
+          "Memory: 16GB RAM, 32GB RAM, 64GB RAM",
+          "Storage: 512GB SSD, 1TB SSD"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-Snapdragon-8Ed-HD-Front",
+        "label": "Surface Laptop, 13.8-inch (8th Edition), front view",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Laptop-Snapdragon-8Ed-HD-Left-Angle",
+        "label": "Surface Laptop, 13.8-inch (8th Edition), left angle view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b02-Surface-Laptop-Snapdragon-8Ed-HD-Top-Down",
+        "label": "Surface Laptop, 13.8-inch (8th Edition), top-down view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b03-Surface-Laptop-Snapdragon-8Ed-HD-Rear-Left",
+        "label": "Surface Laptop, 13.8-inch (8th Edition), rear left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-Snapdragon-8Ed-HR-Front",
+        "label": "Surface Laptop, 13.8-inch (8th Edition), front view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Laptop-Snapdragon-8Ed-HR-Left-Angle",
+        "label": "Surface Laptop, 13.8-inch (8th Edition), left angle view"
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/laptops"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8MZBMMCJZPMF",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "65KC",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "surface-laptop-15-inch-8th-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Laptop, 15-inch (8th Edition)",
+    "slug": "surface-laptop-15-inch-8th-edition",
+    "status": "ENABLED",
+    "description": "<p>2026 Surface Laptop, 15-inch (8th Ed) — a Snapdragon X2 laptop with Windows 11, a 262 PPI touchscreen, built-in NPU, Wi-Fi 7, up to 64 GB memory, and removable SSD storage.</p><p>For students, the Snapdragon X2 processor, up to 64 GB of memory, and 15-inch 262 PPI HDR touchscreen handle demanding coursework, coding environments, and data-heavy projects through long study and exam sessions.</p><p>For families, the large 15-inch 262 PPI touchscreen, MicroSDXC Express card reader, and all-day battery support shared video calls, photo browsing, and everyday computing for everyone in the household.</p><p>For photography enthusiasts, the MicroSDXC Express card reader and 262 PPI 15-inch HDR touchscreen support importing, reviewing, and editing high-resolution photos directly from the camera card without a separate adapter.</p><p>For home entertainment users, the 15-inch HDR touchscreen at 120Hz and all-day battery deliver vibrant, smooth streaming and video playback from any room without interruption.</p>",
+    "shortDescription": "2026 Surface Laptop, 15-inch (8th Ed) — a Snapdragon X2 laptop with Windows 11, a 262 PPI touchscreen, built-in NPU, Wi-Fi 7, up to 64 GB memory, and removable SSD storage.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Laptop, 15-inch (8th Edition) - See Price & Availability | Microsoft Store",
+      "description": "2026 Surface Laptop, 15-inch (8th Ed) — a Snapdragon X2 laptop with Windows 11, a 262 PPI touchscreen, built-in NPU, Wi-Fi 7, up to 64 GB memory, and removable SSD storage.",
+      "keywords": [
+        "surface",
+        "laptop",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Laptop"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save up to $600"
+        ]
+      },
+      {
+        "code": "processor",
+        "values": [
+          "Snapdragon® X2 Plus (10 Core)"
+        ]
+      },
+      {
+        "code": "memory",
+        "values": [
+          "16GB RAM"
+        ]
+      },
+      {
+        "code": "storage",
+        "values": [
+          "512GB SSD"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Platinum"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "15\""
+        ]
+      },
+      {
+        "code": "configuration_options",
+        "values": [
+          "Processor: Snapdragon® X2 Plus (10 Core), Snapdragon® X2 Elite (12 Core)",
+          "Color: Platinum, Black",
+          "Memory: 16GB RAM, 24GB RAM, 32GB RAM, 64GB RAM",
+          "Storage: 512GB SSD, 1TB SSD"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-Snapdragon-8Ed-JD-Front",
+        "label": "Surface Laptop, 15-inch (8th Edition), front view",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Laptop-Snapdragon-8Ed-JD-Left-Angle",
+        "label": "Surface Laptop, 15-inch (8th Edition), left angle view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b02-Surface-Laptop-Snapdragon-8Ed-JD-Top-Down",
+        "label": "Surface Laptop, 15-inch (8th Edition), top-down view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b03-Surface-Laptop-Snapdragon-8Ed-JD-Rear-Left",
+        "label": "Surface Laptop, 15-inch (8th Edition), rear left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-Snapdragon-8Ed-JC-Front",
+        "label": "Surface Laptop, 15-inch (8th Edition), front view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Laptop-Snapdragon-8Ed-JC-Left-Angle",
+        "label": "Surface Laptop, 15-inch (8th Edition), left angle view"
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/laptops"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8MZBMMCJZP9W",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "R7PN",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "surface-laptop-ultra",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Laptop Ultra",
+    "slug": "surface-laptop-ultra",
+    "status": "ENABLED",
+    "description": "<p>Surface Laptop Ultra, the most powerful Surface Laptop ever built, engineered with NVIDIA RTX Spark and Blackwell RTX GPU architecture to deliver up to one petaflop of AI compute and run up to 120B parameter models locally.</p><p>For creators, designers, and video editors, Surface Laptop Ultra is built for AI-assisted creative production with a 15-inch mini-LED PixelSense Ultra touchscreen, up to 2,000 nits peak HDR brightness, and high-precision color accuracy for demanding visual workflows.</p><p>For developers, AI builders, and technical power users, it is optimized for local model experimentation and accelerated workloads with up to 128 GB unified memory, dynamic CPU/GPU allocation, and sustained performance from an all-new thermal system.</p><p>For mobile professionals, Surface Laptop Ultra combines high performance and portability in a thin, lightweight design under 18 mm and under 4.5 lbs, plus creator-ready ports including SD card reader, HDMI, USB-C, USB-A, and a 3.5 mm audio jack.</p>",
+    "shortDescription": "Surface Laptop Ultra, the most powerful Surface Laptop ever built, engineered with NVIDIA RTX Spark and Blackwell RTX GPU architecture to deliver up to one petaflop of AI compute and run up to 120B parameter models locally.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Laptop Ultra - See Price & Availability | Microsoft Store",
+      "description": "Surface Laptop Ultra, the most powerful Surface Laptop ever built, engineered with NVIDIA RTX Spark and Blackwell RTX GPU architecture to deliver up to one petaflop of AI compute and run up to 120B parameter models locally.",
+      "keywords": [
+        "surface",
+        "laptop",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Laptop"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "0% APR from $216.67/mo for 12 months, plus trade in and get up to $1,000"
+        ]
+      },
+      {
+        "code": "processor",
+        "values": [
+          "NVIDIA RTX Spark™ N1X with 5120-core GPU and 18-core CPU"
+        ]
+      },
+      {
+        "code": "memory",
+        "values": [
+          "24 GB unified memory"
+        ]
+      },
+      {
+        "code": "storage",
+        "values": [
+          "512 GB SSD"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Platinum"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "15\""
+        ]
+      },
+      {
+        "code": "configuration_options",
+        "values": [
+          "Processor: NVIDIA RTX Spark™ N1X with 5120-core GPU and 18-core CPU, NVIDIA RTX Spark™ N1X with 6144-core GPU and 20-core CPU",
+          "Color: Nightfall, Platinum",
+          "Unified memory: 24 GB unified memory, 32 GB unified memory, 48 GB unified memory, 64 GB unified memory, 128 GB unified memory",
+          "Storage (SSD): 512 GB SSD, 1 TB SSD, 2 TB SSD",
+          "Windows OS: Windows 11 Home, Windows 11 Pro"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-Ultra-NVIDIA-15in-1Ed-Nightfall-Front",
+        "label": "Surface Laptop Ultra, front view",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Laptop-Ultra-NVIDIA-15in-1Ed-Nightfall-Closed-Attract",
+        "label": "Surface Laptop Ultra, closed view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b02-Surface-Laptop-Ultra-NVIDIA-15in-1Ed-Nightfall-Top-Down",
+        "label": "Surface Laptop Ultra, top-down view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b03-Surface-Laptop-Ultra-NVIDIA-15in-1Ed-Nightfall-Rear-Left",
+        "label": "Surface Laptop Ultra, rear left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b04-Surface-Laptop-Ultra-NVIDIA-15in-1Ed-Duo-Platinum-Nightfall-Attract",
+        "label": "Surface Laptop Ultra"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-Ultra-NVIDIA-15in-1Ed-Platinum-Front",
+        "label": "Surface Laptop Ultra, front view"
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/laptops"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8WG5VQP0X4B8",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "2ZG8",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "surface-laptop-for-business-7th-edition-intel",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Laptop for Business, 13.8 and 15-inch (7th Edition) | Intel",
+    "slug": "surface-laptop-for-business-7th-edition-intel",
+    "status": "ENABLED",
+    "description": "<p>Surface Laptop for Business, 7ᵗʰ Edition, the first Copilot+ PC built exclusively for business with Intel® Core™ Ultra processors (Series 2) and optional 5G connectivity. Tackle demanding workloads with powerful performance, all-day battery life, and new, unique AI experiences only available on Copilot+ PCs that help make your device smarter, faster, and more creative.</p><p>13.8 or 15-inch Surface Laptop for Business (7th Edition). Features a touchscreen, the Intel Core Ultra 5 or 7 (Series 2) processor, USB-C/USB4 ports, Wi-Fi or 5G, with long battery life and AI features.</p>",
+    "shortDescription": "Surface Laptop for Business, 7ᵗʰ Edition, the first Copilot+ PC built exclusively for business with Intel® Core™ Ultra processors (Series 2) and optional 5G connectivity.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Laptop for Business, 13.8 and 15-inch (7th Edition) | Intel - See Price & Availability | Microsoft Store",
+      "description": "Surface Laptop for Business, 7ᵗʰ Edition, the first Copilot+ PC built exclusively for business with Intel® Core™ Ultra processors (Series 2) and optional 5G connectivity. Tackle demanding workloads with powerful performance, all-day battery life, and new, unique AI experiences only available on Copi",
+      "keywords": [
+        "surface",
+        "laptop",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Laptop"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Black Friday business pricing"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Platinum"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "13.8\" or 15\""
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-5G-Platinum-Front-View-COMMR",
+        "label": "A front view of 13.8-inch Surface Laptop for Business with 5G in the color Platinum.",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Laptop-5G-Platinum-Left-Profile-COMMR",
+        "label": "A side view of 13.8-inch Surface Laptop for Business with 5G in the color Platinum."
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b02-Surface-Laptop-5G-Platinum-Top-Down-COMMR",
+        "label": "A top-down view of 13.8-inch Surface Laptop for Business with 5G in the color Platinum."
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/SPX1B-2000x1500-BB-00",
+        "label": "A front view of Surface Laptop for Business in the color Platinum."
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/SPX1B-2000x1500-BB-01",
+        "label": "A side view of Surface Laptop for Business in the color Platinum."
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/business"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "93DZMW6Q4W2B",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "HRQP",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "surface-pro-for-business-11th-edition-snapdragon",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Pro for Business, 13-inch (11th Edition) | Snapdragon",
+    "slug": "surface-pro-for-business-11th-edition-snapdragon",
+    "status": "ENABLED",
+    "description": "<p>13-inch Surface Pro for Business (11th Edition). This 2-in-1 tablet to laptop features the Snapdragon X Elite (12 Core) or Plus (10 Core) processor, OLED or LCD screen, Wi-Fi or 5G, and long battery life.</p><p>13-inch Surface Pro for Business, Copilot+ PC. This 2-in-1 tablet to laptop features the Snapdragon X Elite (12 Core) or Plus (10 Core) processor, OLED or LCD screen, Wi-Fi or 5G, and long battery life. Previously known as Surface Pro 11 for Business, or 11th Edition.</p>",
+    "shortDescription": "13-inch Surface Pro for Business (11th Edition).",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Pro for Business, 13-inch (11th Edition) | Snapdragon - See Price & Availability | Microsoft Store",
+      "description": "13-inch Surface Pro for Business (11th Edition). This 2-in-1 tablet to laptop features the Snapdragon X Elite (12 Core) or Plus (10 Core) processor, OLED or LCD screen, Wi-Fi or 5G, and long battery life.",
+      "keywords": [
+        "surface",
+        "2-in-1",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "2-in-1"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save up to $190"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Platinum"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "13\""
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/SPX2B-BB-00",
+        "label": "A front view of Surface Pro for Business in the color Platinum.",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/SPX2B-BB-01",
+        "label": "A side view of Surface Pro for Business in the color Platinum."
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/SPX2B-BB-02",
+        "label": "A front view of Surface Pro for Business in the color Black."
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/SPX2B-BB-03",
+        "label": "A side view of Surface Pro for Business in the color Black."
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/business"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8NL1W61JW8ZM",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "GRS3",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "surface-pro-12-inch-1st-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Pro, 12-inch (1st Edition)",
+    "slug": "surface-pro-12-inch-1st-edition",
+    "status": "ENABLED",
+    "description": "<p>1st Edition 12-inch Surface Pro with tablet to laptop flexibility, Qualcomm Snapdragon X Plus (8 Core) processors, touchscreen and all-day battery life.</p>",
+    "shortDescription": "1st Edition 12-inch Surface Pro with tablet to laptop flexibility, Qualcomm Snapdragon X Plus (8 Core) processors, touchscreen and all-day battery life.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Pro, 12-inch (1st Edition) - See Price & Availability | Microsoft Store",
+      "description": "1st Edition 12-inch Surface Pro with tablet to laptop flexibility, Qualcomm Snapdragon X Plus (8 Core) processors, touchscreen and all-day battery life.",
+      "keywords": [
+        "surface",
+        "2-in-1",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "2-in-1"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Black Friday pricing"
+        ]
+      },
+      {
+        "code": "processor",
+        "values": [
+          "Snapdragon® X Plus (8 Core)"
+        ]
+      },
+      {
+        "code": "memory",
+        "values": [
+          "8GB RAM"
+        ]
+      },
+      {
+        "code": "storage",
+        "values": [
+          "256GB SSD"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Platinum"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "12\""
+        ]
+      },
+      {
+        "code": "configuration_options",
+        "values": [
+          "Processor: Snapdragon® X Plus (8 Core)",
+          "Color: Violet, Ocean, Platinum",
+          "Network: Wi-Fi",
+          "Memory: 16GB RAM, 8GB RAM",
+          "Storage: 256GB SSD, 512GB SSD"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Pro-12-inch-1Ed-Rational-Ocean-Top-Horizontal",
+        "label": "Surface Pro, 12-inch (1st Edition), top view",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/B01-Surface-Pro-12-inch-1Ed-Rational-Ocean-Front-Left",
+        "label": "Surface Pro, 12-inch (1st Edition), front left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/B02-Surface-Pro-12-inch-1Ed-Rational-Ocean-Rear",
+        "label": "Surface Pro, 12-inch (1st Edition), rear view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b03-Surface-Pro-Snapdragon-X-Plus-12in-1Ed-Ocean-Profile-Right",
+        "label": "Surface Pro, 12-inch (1st Edition), right view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/B04-Surface-Pro-12-inch-1Ed-Family-Rear",
+        "label": "Surface Pro, 12-inch (1st Edition), rear view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Pro-12-inch-1Ed-Rational-Violet-Top-Horizontal",
+        "label": "Surface Pro, 12-inch (1st Edition), top view"
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/2-in-1"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8MZBMMCJZQV2",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "LB11",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "surface-laptop-13-inch-1st-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Laptop, 13-inch (1st Edition)",
+    "slug": "surface-laptop-13-inch-1st-edition",
+    "status": "ENABLED",
+    "description": "<p>1st Edition 13-inch Surface Laptop. Features Qualcomm Snapdragon X Plus (8 Core) processors, touchscreen and all-day battery life.</p>",
+    "shortDescription": "1st Edition 13-inch Surface Laptop.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Laptop, 13-inch (1st Edition) - See Price & Availability | Microsoft Store",
+      "description": "1st Edition 13-inch Surface Laptop. Features Qualcomm Snapdragon X Plus (8 Core) processors, touchscreen and all-day battery life.",
+      "keywords": [
+        "surface",
+        "laptop",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Laptop"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save up to $125"
+        ]
+      },
+      {
+        "code": "processor",
+        "values": [
+          "Snapdragon® X Plus (8 Core)"
+        ]
+      },
+      {
+        "code": "memory",
+        "values": [
+          "8GB RAM"
+        ]
+      },
+      {
+        "code": "storage",
+        "values": [
+          "256GB SSD"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Platinum"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "13\""
+        ]
+      },
+      {
+        "code": "configuration_options",
+        "values": [
+          "Processor: Snapdragon® X Plus (8 Core)",
+          "Color: Violet, Ocean, Platinum",
+          "Memory: 16GB RAM, 8GB RAM",
+          "Storage: 256GB SSD, 512GB SSD"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-13-inch-1Ed-Rational-Ocean-Front",
+        "label": "Surface Laptop, 13-inch (1st Edition), front view",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/B01-Surface-Laptop-13-inch-1Ed-Rational-Ocean-Front-Left",
+        "label": "Surface Laptop, 13-inch (1st Edition), front left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/B02-Surface-Laptop-13-inch-1Ed-Rational-Ocean-Top",
+        "label": "Surface Laptop, 13-inch (1st Edition), top view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b03-Surface-Laptop-Snapdragon-X-Plus-13in-1Ed-Ocean-Back",
+        "label": "Surface Laptop, 13-inch (1st Edition), back view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/B04-Surface-Laptop-13-inch-1Ed-Family-Floating-All-Colors",
+        "label": "Surface Laptop, 13-inch (1st Edition) in all colors"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Laptop-13-inch-1Ed-Rational-Violet-Front",
+        "label": "Surface Laptop, 13-inch (1st Edition), front view"
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/laptops"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8MZBMMCJZQV3",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "3HFL",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "surface-pro-12-inch-2nd-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Surface Pro, 12-inch (2nd Edition)",
+    "slug": "surface-pro-12-inch-2nd-edition",
+    "status": "ENABLED",
+    "description": "<p>Surface Pro, a compact Snapdragon X2 Plus 2-in-1 PC that adapts as a tablet, sketchbook, or laptop. Get full Windows 11 performance, all-day battery life, and intuitive touch, pen, and voice interactions for work and play anywhere. Slim Pen and keyboard sold separately.</p><p>For students and creators, Surface Pro shifts from handwritten notes and sketches to research, editing, and assignments with touch, pen, and voice interactions.</p><p>For travelers and mobile professionals, tablet mode keeps reading and reviewing comfortable on the move, while laptop mode supports focused work wherever the day leads.</p>",
+    "shortDescription": "Surface Pro, a compact Snapdragon X2 Plus 2-in-1 PC that adapts as a tablet, sketchbook, or laptop.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy Surface Pro, 12-inch (2nd Edition) - See Price & Availability | Microsoft Store",
+      "description": "Surface Pro, a compact Snapdragon X2 Plus 2-in-1 PC that adapts as a tablet, sketchbook, or laptop. Get full Windows 11 performance, all-day battery life, and intuitive touch, pen, and voice interactions for work and play anywhere. Slim Pen and keyboard sold separately.",
+      "keywords": [
+        "surface",
+        "2-in-1",
+        "copilot+ pc",
+        "windows 11",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "Surface"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "2-in-1"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Up to 5% off for students"
+        ]
+      },
+      {
+        "code": "processor",
+        "values": [
+          "Snapdragon® X2 Plus (6 Core)"
+        ]
+      },
+      {
+        "code": "memory",
+        "values": [
+          "16GB RAM"
+        ]
+      },
+      {
+        "code": "storage",
+        "values": [
+          "256GB UFS"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Black"
+        ]
+      },
+      {
+        "code": "display_size",
+        "values": [
+          "12\""
+        ]
+      },
+      {
+        "code": "configuration_options",
+        "values": [
+          "Processor: Snapdragon® X2 Plus (6 Core)",
+          "Color: Violet, Platinum, Black",
+          "Memory: 16GB RAM, 24GB RAM",
+          "Storage: 256GB UFS, 512GB UFS"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Pro-SnapdragonX2-12-2Ed-Black-Front",
+        "label": "Surface Pro, 12-inch (2nd Edition), front view",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Pro-SnapdragonX2-12-2Ed-Black-Front-Left",
+        "label": "Surface Pro, 12-inch (2nd Edition), front left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b02-Surface-Pro-SnapdragonX2-12-2Ed-Black-Top-Down-Rear",
+        "label": "Surface Pro, 12-inch (2nd Edition), top-down rear view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b03-Surface-Pro-SnapdragonX2-12-2Ed-Black-Left-Open",
+        "label": "Surface Pro, 12-inch (2nd Edition), left view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Surface-Pro-SnapdragonX2-12-2Ed-Violet-Front",
+        "label": "Surface Pro, 12-inch (2nd Edition), front view"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b01-Surface-Pro-SnapdragonX2-12-2Ed-Violet-Front-Left",
+        "label": "Surface Pro, 12-inch (2nd Edition), front left view"
+      }
+    ],
+    "routes": [
+      {
+        "path": "surface"
+      },
+      {
+        "path": "surface/2-in-1"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8WG5VQP0X4BW",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "8W3D",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "XBOX Wireless Controller",
+    "slug": "xbox-wireless-controller",
+    "status": "ENABLED",
+    "description": "<p>Elevate your game with a controller designed for enhanced comfort during gameplay. Plus, stay on target with textured triggers and bumpers, a hybrid D-pad, customizable button mapping, and Bluetooth technology for seamless pairing.</p><p>Enhance your gaming with XBOX Wireless Controller. Compatible with XBOX Series X|S , Windows PC, Android, and IOS. Personalize with interchangeable components and limitless customizations through the XBOX Accessories app. 40 hours of battery life for extended gameplay. Experience immersive gameplay with adaptive controller features. Available in Carbon Black, Robot White, Shock Blue, Pulse Red, Electric Volt, Deep Pink, Velocity Green.</p>",
+    "shortDescription": "Elevate your game with a controller designed for enhanced comfort during gameplay.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy XBOX Wireless Controller - See Price & Availability | Microsoft Store",
+      "description": "Elevate your game with a controller designed for enhanced comfort during gameplay. Plus, stay on target with textured triggers and bumpers, a hybrid D-pad, customizable button mapping, and Bluetooth technology for seamless pairing.",
+      "keywords": [
+        "xbox",
+        "controller",
+        "wireless controller",
+        "gaming",
+        "accessories",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "XBOX"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Controller"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save $15.93"
+        ]
+      },
+      {
+        "code": "compatible_with",
+        "values": [
+          "Xbox Series X|S",
+          "Xbox One",
+          "Windows",
+          "Android",
+          "iOS"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Carbon Black"
+        ]
+      },
+      {
+        "code": "battery_life_hours",
+        "values": [
+          "40"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Xbox-Cntrl-Black-b00",
+        "label": "Front view of XBOX Wireless Controller black.",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Xbox-Cntrl-White-b01-1",
+        "label": "Xbox Wireless Controller -  Robot White"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Xbox-Cntrl-Blue-b02",
+        "label": "Xbox Wireless Controller - Shock Blue"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b022-Xbox-Wireless-Controller-Shock-Blue",
+        "label": "Front and back views of the Xbox Wireless Controller in Shock Blue."
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b02-Xbox-Wireless-Controller-Shock-Blue",
+        "label": "Top down view of the Xbox Wireless Controller in Shock Blue."
+      }
+    ],
+    "routes": [
+      {
+        "path": "xbox"
+      },
+      {
+        "path": "xbox/accessories"
+      },
+      {
+        "path": "xbox/accessories/controllers"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8XN59CRBSQGZ",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "QP6M",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller-breaker-special-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "XBOX Wireless Controller – Breaker Special Edition",
+    "slug": "xbox-wireless-controller-breaker-special-edition",
+    "status": "ENABLED",
+    "description": "<p>Hold nothing back with the Breaker Special Edition Series. Ice Breaker keeps it forever fresh with a mix of iced and frosted blues.</p><p>Hold nothing back with the Breaker Series Special Edition XBOX Wireless Controllers. Featuring Ice Breaker, Heart Breaker, and Storm Breaker designs, each controller delivers immersive gameplay, 40-hour battery life, and full compatibility with XBOX Series X|S &amp; Windows PC.</p>",
+    "shortDescription": "Hold nothing back with the Breaker Special Edition Series.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy XBOX Wireless Controller – Breaker Special Edition - See Price & Availability | Microsoft Store",
+      "description": "Hold nothing back with the Breaker Special Edition Series. Ice Breaker keeps it forever fresh with a mix of iced and frosted blues.",
+      "keywords": [
+        "xbox",
+        "controller",
+        "wireless controller",
+        "gaming",
+        "accessories",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "XBOX"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Controller"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save $20.77"
+        ]
+      },
+      {
+        "code": "compatible_with",
+        "values": [
+          "Xbox Series X|S",
+          "Xbox One",
+          "Windows"
+        ]
+      },
+      {
+        "code": "color",
+        "values": [
+          "Ice Breaker Special Edition"
+        ]
+      },
+      {
+        "code": "battery_life_hours",
+        "values": [
+          "40"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/257427_Image-Buy-Box-0_01_2000x2000",
+        "label": "Front angle of the XBOX Wireless Controller – Ice Breaker Special Edition",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/257427_Image-Buy-Box-0_02_2000x2000",
+        "label": "Front angle of the XBOX Wireless Controller – Heart Breaker Special Edition"
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/257427_Image-Buy-Box-0_03_2000x2000",
+        "label": "Front angle of the XBOX Wireless Controller – Storm Breaker Special Edition"
+      }
+    ],
+    "routes": [
+      {
+        "path": "xbox"
+      },
+      {
+        "path": "xbox/accessories"
+      },
+      {
+        "path": "xbox/accessories/controllers"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8MZBMMCJZNTG",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "WHZ9",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "xbox-elite-wireless-controller-series-2-core",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "XBOX Elite Wireless Controller Series 2 – Core",
+    "slug": "xbox-elite-wireless-controller-series-2-core",
+    "status": "ENABLED",
+    "description": "<p>Experience the XBOX Elite Wireless Controller Series 2 – Core, featuring adjustable-tension thumbsticks and shorter hair trigger locks, plus limitless customization with the XBOX Accessories app on XBOX Series X|S, XBOX One, and Windows PC.</p><p>Enhance your gaming with XBOX Wireless Controller. Compatible with XBOX Series X|S , Windows PC, Android, and IOS. Personalize with interchangeable components and limitless customizations through the XBOX Accessories app. 40 hours of battery life for extended gameplay. Experience immersive gameplay with adaptive controller features. Available in White, Blue, and Red.</p>",
+    "shortDescription": "Experience the XBOX Elite Wireless Controller Series 2 – Core, featuring adjustable-tension thumbsticks and shorter hair trigger locks, plus limitless customization with the XBOX Accessories app on XBOX Series X|S, XBOX One, and Windows PC.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy XBOX Elite Wireless Controller Series 2 – Core - See Price & Availability | Microsoft Store",
+      "description": "Experience the XBOX Elite Wireless Controller Series 2 – Core, featuring adjustable-tension thumbsticks and shorter hair trigger locks, plus limitless customization with the XBOX Accessories app on XBOX Series X|S, XBOX One, and Windows PC.",
+      "keywords": [
+        "xbox",
+        "controller",
+        "wireless controller",
+        "gaming",
+        "accessories",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "XBOX"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Controller"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save $38.25"
+        ]
+      },
+      {
+        "code": "compatible_with",
+        "values": [
+          "Xbox Series X|S",
+          "Xbox One",
+          "Windows",
+          "Android",
+          "iOS"
+        ]
+      },
+      {
+        "code": "battery_life_hours",
+        "values": [
+          "40"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/320089_Image-Buy-Box-0_2000x2000-1",
+        "label": "Front view of the XBOX Elite Wireless Controller Series 2 – Core (White)",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/b00-Xbox-Elite-Controller-right-angle-Series-2-White",
+        "label": "A XBOX Elite Wireless Controller Series 2-Core White."
+      }
+    ],
+    "routes": [
+      {
+        "path": "xbox"
+      },
+      {
+        "path": "xbox/accessories"
+      },
+      {
+        "path": "xbox/accessories/controllers"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8V7M3K0BSH52",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "8JFF",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "xbox-elite-wireless-controller-series-2",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "XBOX Elite Wireless Controller Series 2",
+    "slug": "xbox-elite-wireless-controller-series-2",
+    "status": "ENABLED",
+    "description": "<p>The XBOX Elite Wireless Controller Series 2 features over 30 ways to play like a pro, including adjustable-tension thumbsticks, new interchangeable components, up to 40 hours of rechargeable battery life, and limitless customization with the XBOX Accessories app on XBOX One and Windows 10.</p><p>Enhance your gaming with XBOX Elite Wireless Controller Series 2. Compatible with XBOX Series X|S &amp; Windows PC. Personalize with interchangeable components and limitless customizations through the XBOX Accessories app. 40 hours of battery life for extended gameplay. Experience immersive gameplay with adaptive controller features.</p>",
+    "shortDescription": "The XBOX Elite Wireless Controller Series 2 features over 30 ways to play like a pro, including adjustable-tension thumbsticks, new interchangeable components, up to 40 hours of rechargeable battery life, and limitless customization with the XBOX Accessories app on XBOX One and Windows 10.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy XBOX Elite Wireless Controller Series 2 - See Price & Availability | Microsoft Store",
+      "description": "The XBOX Elite Wireless Controller Series 2 features over 30 ways to play like a pro, including adjustable-tension thumbsticks, new interchangeable components, up to 40 hours of rechargeable battery life, and limitless customization with the XBOX Accessories app on XBOX One and Windows 10.",
+      "keywords": [
+        "xbox",
+        "controller",
+        "wireless controller",
+        "gaming",
+        "accessories",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "XBOX"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Controller"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save $32.00"
+        ]
+      },
+      {
+        "code": "compatible_with",
+        "values": [
+          "Xbox Series X|S",
+          "Xbox One",
+          "Windows"
+        ]
+      },
+      {
+        "code": "battery_life_hours",
+        "values": [
+          "40"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Xbox-3131-D-b00-1",
+        "label": "Black Xbox Elite Wireless Controller viewed from the front",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      },
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Xbox-3131-D-b01-1",
+        "label": "Black Xbox Elite Wireless Controller viewed from the Back"
+      }
+    ],
+    "routes": [
+      {
+        "path": "xbox"
+      },
+      {
+        "path": "xbox/accessories"
+      },
+      {
+        "path": "xbox/accessories/controllers"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8RSN7J6375GG",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "99WM",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller-plus-usb-c-cable",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "XBOX Wireless Controller + USB-C® Cable",
+    "slug": "xbox-wireless-controller-plus-usb-c-cable",
+    "status": "ENABLED",
+    "description": "<p>Experience the modernized XBOX Wireless Controller, designed for enhanced comfort during gameplay for supported consoles, PCs, and mobile phones or tablets. Play wirelessly or use the included 9' USB-C cable for a wired gaming experience.</p>",
+    "shortDescription": "Experience the modernized XBOX Wireless Controller, designed for enhanced comfort during gameplay for supported consoles, PCs, and mobile phones or tablets.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy XBOX Wireless Controller + USB-C® Cable - See Price & Availability | Microsoft Store",
+      "description": "Experience the modernized XBOX Wireless Controller, designed for enhanced comfort during gameplay for supported consoles, PCs, and mobile phones or tablets. Play wirelessly or use the included 9' USB-C cable for a wired gaming experience.",
+      "keywords": [
+        "xbox",
+        "controller",
+        "wireless controller",
+        "gaming",
+        "accessories",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "XBOX"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Controller"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save $13.42"
+        ]
+      },
+      {
+        "code": "compatible_with",
+        "values": [
+          "Xbox Series X|S",
+          "Xbox One",
+          "Windows"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/4600923_Image-Buy-Box-0_2555x1555",
+        "label": "Front of the XBOX Wireless Controller + USB-C® Cable",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "path": "xbox"
+      },
+      {
+        "path": "xbox/accessories"
+      },
+      {
+        "path": "xbox/accessories/controllers"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8T8KCNB1XS3D",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "VP7R",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller-daystrike-camo-special-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "XBOX Wireless Controller – Daystrike Camo Special Edition",
+    "slug": "xbox-wireless-controller-daystrike-camo-special-edition",
+    "status": "ENABLED",
+    "description": "<p>Experience the XBOX Wireless Controller – Daystrike Camo Special Edition, featuring a striking red, gray, and black camouflage pattern.</p><p>Enhance your gaming with XBOX Wireless Controller – Daystrike Camo Special Edition. Compatible with XBOX Series X|S &amp; Windows PC. Personalize with interchangeable components and limitless customizations through the XBOX Accessories app. 40 hours of battery life for extended gameplay. Experience immersive gameplay with adaptive controller features.</p>",
+    "shortDescription": "Experience the XBOX Wireless Controller – Daystrike Camo Special Edition, featuring a striking red, gray, and black camouflage pattern.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy XBOX Wireless Controller – Daystrike Camo Special Edition - See Price & Availability | Microsoft Store",
+      "description": "Experience the XBOX Wireless Controller – Daystrike Camo Special Edition, featuring a striking red, gray, and black camouflage pattern.",
+      "keywords": [
+        "xbox",
+        "controller",
+        "wireless controller",
+        "gaming",
+        "accessories",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "XBOX"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Controller"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save $17.69"
+        ]
+      },
+      {
+        "code": "compatible_with",
+        "values": [
+          "Xbox Series X|S",
+          "Xbox One",
+          "Windows"
+        ]
+      },
+      {
+        "code": "battery_life_hours",
+        "values": [
+          "40"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/444793_Image-Buy-Box-0_2000x2000",
+        "label": "XBOX Wireless Controller – Daystrike Camo Special Edition",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "path": "xbox"
+      },
+      {
+        "path": "xbox/accessories"
+      },
+      {
+        "path": "xbox/accessories/controllers"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "901JF2ZPTLXQ",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "FB4W",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller-arctic-camo-special-edition",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "XBOX Wireless Controller – Arctic Camo Special Edition",
+    "slug": "xbox-wireless-controller-arctic-camo-special-edition",
+    "status": "ENABLED",
+    "description": "<p>Experience the XBOX Wireless Controller – Arctic Camo Special Edition, featuring a rugged white and gray camouflage pattern, modern sculpted surfaces, and refined geometry.</p><p>Enhance your gaming with XBOX Wireless Controller – Arctic Camo Special Edition. Compatible with XBOX Series X|S &amp; Windows PC. Personalize with interchangeable components and limitless customizations through the XBOX Accessories app. 40 hours of battery life for extended gameplay. Experience immersive gameplay with adaptive controller features.</p>",
+    "shortDescription": "Experience the XBOX Wireless Controller – Arctic Camo Special Edition, featuring a rugged white and gray camouflage pattern, modern sculpted surfaces, and refined geometry.",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "metaTags": {
+      "title": "Buy XBOX Wireless Controller – Arctic Camo Special Edition - See Price & Availability | Microsoft Store",
+      "description": "Experience the XBOX Wireless Controller – Arctic Camo Special Edition, featuring a rugged white and gray camouflage pattern, modern sculpted surfaces, and refined geometry.",
+      "keywords": [
+        "xbox",
+        "controller",
+        "wireless controller",
+        "gaming",
+        "accessories",
+        "black friday",
+        "deal",
+        "microsoft"
+      ]
+    },
+    "attributes": [
+      {
+        "code": "brand",
+        "values": [
+          "XBOX"
+        ]
+      },
+      {
+        "code": "product_family",
+        "values": [
+          "Devices"
+        ]
+      },
+      {
+        "code": "product_type",
+        "values": [
+          "Controller"
+        ]
+      },
+      {
+        "code": "badge",
+        "values": [
+          "Black Friday"
+        ]
+      },
+      {
+        "code": "black_friday_deal",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "code": "deal_description",
+        "values": [
+          "Save $17.69"
+        ]
+      },
+      {
+        "code": "compatible_with",
+        "values": [
+          "Xbox Series X|S",
+          "Xbox One",
+          "Windows"
+        ]
+      },
+      {
+        "code": "battery_life_hours",
+        "values": [
+          "40"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/BuyBox-Xbox-Wireless-Controller-Arctic-Camo-b00",
+        "label": "Front view of XBOX Wireless Controller – Arctic Camo Special Edition.",
+        "roles": [
+          "BASE",
+          "SMALL",
+          "THUMBNAIL"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "path": "xbox"
+      },
+      {
+        "path": "xbox/accessories"
+      },
+      {
+        "path": "xbox/accessories/controllers"
+      },
+      {
+        "path": "deals"
+      },
+      {
+        "path": "deals/black-friday"
+      }
+    ],
+    "externalIds": [
+      {
+        "id": "8QRF79K7JSR6",
+        "origin": "microsoft-store-product-id"
+      },
+      {
+        "id": "ZHP2",
+        "origin": "microsoft-store-sku-id"
+      }
+    ]
   }
 ]
