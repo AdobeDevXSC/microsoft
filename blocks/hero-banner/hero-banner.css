@@ -1,0 +1,93 @@
+/* Hero Banner: full-bleed image, overlay text card (source: 1280 x 549, card 384px at x=64, padding 48px) */
+main > .section.hero-banner-container > div,
+body.store-pdp main > .section.hero-banner-container > div {
+  max-width: none;
+  padding: 0;
+}
+
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+.hero-banner .hero-banner-media picture,
+.hero-banner .hero-banner-media img {
+  display: block;
+  width: 100%;
+}
+
+.hero-banner .hero-banner-media img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.hero-banner .hero-banner-content {
+  padding: 32px 20px;
+}
+
+.hero-banner .hero-banner-badge {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 6px 12px;
+  background-color: var(--store-badge, #ffb900);
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.hero-banner h1,
+.hero-banner h2,
+.hero-banner h3 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero-banner p {
+  margin: 0 0 24px;
+  color: #fff;
+}
+
+.hero-banner p.button-wrapper {
+  margin: 0;
+}
+
+.hero-banner sup a:any-link {
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .hero-banner {
+    min-height: 549px;
+  }
+
+  .hero-banner .hero-banner-media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-banner .hero-banner-media picture,
+  .hero-banner .hero-banner-media img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .hero-banner .hero-banner-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 549px;
+    padding: 0 64px;
+  }
+
+  .hero-banner .hero-banner-card {
+    width: 384px;
+    padding: 48px;
+    box-sizing: border-box;
+  }
+}

@@ -121,3 +121,118 @@
     gap: 48px;
   }
 }
+
+/* store-pdp template: compact Microsoft Store buy box (source .buy-box: 1152px elevated card,
+   image col | title + description | price + CTA). The catalog description repeats the authored
+   overview sections on these pages, so only the specifications show below the card. */
+body.store-pdp main > .section.product-details-container > div {
+  max-width: 1152px;
+}
+
+body.store-pdp .product-details {
+  gap: 48px;
+  padding: 24px 0 0;
+}
+
+body.store-pdp .product-details__wrapper {
+  gap: 24px;
+  padding: 24px;
+  background: var(--color-neutral-50);
+  box-shadow: var(--store-shadow);
+}
+
+body.store-pdp .product-details__gallery {
+  border-radius: 0;
+  background: transparent;
+}
+
+body.store-pdp .product-details__gallery .pdp-carousel {
+  max-height: 320px;
+}
+
+body.store-pdp .product-details__header .pdp-header__title {
+  margin: 0;
+  font: 600 29px/1.2 var(--type-base-font-family);
+  color: #000;
+}
+
+body.store-pdp .product-details__price .pdp-price-range,
+body.store-pdp .product-details__price .dropin-price {
+  font: 400 24px/1.2 var(--type-base-font-family);
+  color: #000;
+}
+
+body.store-pdp .product-details__short-description {
+  color: #000;
+}
+
+body.store-pdp .product-details__buttons a.button.primary {
+  width: 100%;
+  margin: 0;
+  border-radius: 2px;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+body.store-pdp .product-details__overview {
+  grid-template-columns: minmax(0, 1fr);
+  padding-top: 0;
+  border-top: 0;
+}
+
+body.store-pdp .product-details__description {
+  display: none;
+}
+
+body.store-pdp .product-details__attributes {
+  max-width: 933px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+body.store-pdp .product-details__attributes .pdp-attributes__title {
+  font: 600 29px/1.2 var(--type-base-font-family);
+  color: #000;
+}
+
+body.store-pdp .product-details__attributes li {
+  grid-template-columns: minmax(140px, 1fr) 3fr;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom-color: #d2d2d2;
+}
+
+@media (width >= 900px) {
+  body.store-pdp .product-details__wrapper {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+    gap: 48px;
+    padding: 24px 24px 32px;
+  }
+
+  /* summary: title + description | price + CTA */
+  body.store-pdp .product-details__summary {
+    position: static;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    grid-template-areas:
+      "header price"
+      "desc buttons"
+      "options buttons";
+    gap: 12px 48px;
+  }
+
+  body.store-pdp .product-details__header { grid-area: header; }
+  body.store-pdp .product-details__price { grid-area: price; }
+  body.store-pdp .product-details__short-description { grid-area: desc; }
+  body.store-pdp .product-details__options { grid-area: options; }
+
+  body.store-pdp .product-details__buttons {
+    grid-area: buttons;
+    align-self: start;
+  }
+
+  body.store-pdp .product-details__buttons a.button.primary {
+    min-width: 0;
+  }
+}

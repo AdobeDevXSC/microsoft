@@ -18,3 +18,9 @@
 .product-recommendations a:focus-visible {
   text-decoration: underline;
 }
+
+/* store-pdp: hide the whole section (heading + "See all") until the unit returns products */
+body.store-pdp main > .section.product-recommendations-container:has(.product-recommendations[hidden]),
+body.store-pdp main > .section.product-recommendations-container:has(.product-recommendations__list > div:empty) {
+  display: none;
+}

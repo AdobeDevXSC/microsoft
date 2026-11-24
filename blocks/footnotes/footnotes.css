@@ -131,3 +131,53 @@ main .footnotes-container > .default-content-wrapper + .footnotes-wrapper .footn
     width: calc(100% - 294px);
   }
 }
+
+/* store-pdp template: plain Microsoft Store footnotes (14px/21px, black text, #0067b8 links) */
+body.store-pdp main > .section.footnotes-container {
+  padding-block: 24px 48px;
+}
+
+body.store-pdp main > .section.footnotes-container > div {
+  max-width: var(--store-content-width);
+  padding-inline: 20px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- template override of the dark card */
+body.store-pdp .footnotes {
+  max-width: none;
+  margin-bottom: 48px;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: #000;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+body.store-pdp .footnotes .footnotes-item {
+  padding: 8px 0;
+}
+
+body.store-pdp .footnotes .footnotes-item:target {
+  background-color: rgb(0 103 184 / 8%);
+}
+
+body.store-pdp .footnotes a.footnotes-marker:any-link,
+body.store-pdp .footnotes .footnotes-text a:any-link {
+  color: var(--store-accent);
+}
+
+body.store-pdp main .footnotes-container > .default-content-wrapper {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+body.store-pdp main .footnotes-container > .default-content-wrapper p {
+  margin: 0 0 16px;
+}
+
+@media (width >= 900px) {
+  body.store-pdp main > .section.footnotes-container > div {
+    padding-inline: 40px;
+  }
+}

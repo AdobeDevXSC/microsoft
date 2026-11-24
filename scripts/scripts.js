@@ -205,7 +205,9 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
+  // derive language from the locale folder (e.g. /en-us/ -> en-US), default to en
+  const [, lang, region] = window.location.pathname.match(/^\/([a-z]{2})-([a-z]{2})(\/|$)/) || [];
+  document.documentElement.lang = lang ? `${lang}-${region.toUpperCase()}` : 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
