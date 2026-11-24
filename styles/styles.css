@@ -550,3 +550,163 @@ main .section.highlight {
 .product-recommendations a:any-link:not(.button) {
   color: var(--color-brand-500);
 }
+
+/* stylelint-disable no-descending-specificity -- store-pdp rules intentionally override the dark Surface defaults above, on store pages only */
+
+/* store-pdp template: Microsoft Store product page (light, Segoe UI, #0067b8 accent).
+   Values from the source page computed styles (microsoft.com/en-us/d/xbox-nano-controller). */
+body.store-pdp {
+  --store-accent: #0067b8;
+  --store-accent-hover: #005da6;
+  --store-badge: #ffb900;
+  --store-tile: #f2f2f2;
+  --store-shadow: 0 3px 7px rgb(0 0 0 / 13%), 0 1px 2px rgb(0 0 0 / 11%);
+  --store-content-width: 933px;
+  --store-h2-size: 29px;
+  --store-h3-size: 24px;
+  --store-font-family: "Segoe UI", segoeui, "Helvetica Neue", helvetica, arial, sans-serif;
+
+  background-color: #fff;
+}
+
+body.store-pdp main {
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: var(--store-accent);
+  --link-hover-color: var(--store-accent-hover);
+  --accent-color: var(--store-accent);
+  --accent-hover-color: var(--store-accent-hover);
+  --body-font-family: var(--store-font-family);
+  --heading-font-family: var(--store-font-family);
+
+  background-color: #fff;
+  color: #000;
+  font-family: var(--store-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+body.store-pdp main > .section {
+  padding: 24px 0;
+}
+
+body.store-pdp main > .section:first-of-type {
+  padding: 0;
+}
+
+/* 933px content column, like the source container (side padding 20px / 40px from 900px) */
+body.store-pdp main > .section > div {
+  max-width: var(--store-content-width);
+}
+
+body.store-pdp main h2,
+body.store-pdp main h3 {
+  margin: 0 0 12px;
+  font-family: var(--store-font-family);
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+body.store-pdp main h2 {
+  margin-bottom: 16px;
+  font-size: var(--store-h2-size);
+  line-height: 1.2;
+}
+
+body.store-pdp main h3 {
+  font-size: var(--store-h3-size);
+  line-height: 1.2;
+}
+
+body.store-pdp main p {
+  margin: 0 0 16px;
+}
+
+/* centered section headings ("Our smallest controller...", "Why buy ...") */
+body.store-pdp main > .section > .default-content-wrapper:first-child h2 {
+  margin: 0 auto 48px;
+  max-width: 622px;
+  font-size: var(--store-h2-size);
+  text-align: center;
+}
+
+/* heading + "See all" above the recommendations (left aligned, like the source) */
+body.store-pdp main .product-recommendations-container > .default-content-wrapper:first-child h2 {
+  margin: 0 0 8px;
+  max-width: none;
+  text-align: left;
+}
+
+/* Microsoft Store buttons: square 2px corners, 16px semibold */
+body.store-pdp main a.button:any-link,
+body.store-pdp main button.button {
+  margin: 8px 24px 8px 0;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  padding: 10px 12px;
+  font-family: var(--store-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-decoration: none;
+}
+
+body.store-pdp main a.button.primary:any-link {
+  border-color: var(--store-accent);
+  background-color: var(--store-accent);
+  color: #fff;
+}
+
+body.store-pdp main a.button.primary:hover,
+body.store-pdp main a.button.primary:focus-visible {
+  border-color: var(--store-accent-hover);
+  background-color: var(--store-accent-hover);
+  color: #fff;
+}
+
+body.store-pdp main a.button.secondary:any-link {
+  border-color: var(--store-accent);
+  background-color: transparent;
+  color: var(--store-accent);
+}
+
+body.store-pdp main a.button.secondary:hover,
+body.store-pdp main a.button.secondary:focus-visible {
+  background-color: var(--store-accent);
+  color: #fff;
+}
+
+body.store-pdp main p.button-wrapper:has(> a.secondary:only-child) {
+  text-align: center;
+}
+
+/* text links with a chevron (".cta" in the source) */
+body.store-pdp main a.store-cta:any-link,
+body.store-pdp main .product-recommendations-container .default-content-wrapper p > a:any-link:only-child {
+  display: inline-block;
+  position: relative;
+  padding-right: 27px;
+  color: var(--store-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+body.store-pdp main a.store-cta:any-link::after,
+body.store-pdp main .product-recommendations-container .default-content-wrapper p > a:any-link:only-child::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid currentcolor;
+  border-right: 2px solid currentcolor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+body.store-pdp main a.store-cta:hover {
+  text-decoration: underline;
+}
+/* stylelint-enable no-descending-specificity */

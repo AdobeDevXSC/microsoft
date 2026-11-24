@@ -1,0 +1,58 @@
+/* Columns (mosaic) - source: two 463px columns, 8px gaps, #f2f2f2 tiles, text tile padding 48px */
+.columns-mosaic .columns-mosaic-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.columns-mosaic .columns-mosaic-col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.columns-mosaic .columns-mosaic-tile {
+  background-color: var(--store-tile, #f2f2f2);
+}
+
+.columns-mosaic .columns-mosaic-image picture,
+.columns-mosaic .columns-mosaic-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.columns-mosaic .columns-mosaic-image img {
+  object-fit: cover;
+}
+
+.columns-mosaic .columns-mosaic-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.columns-mosaic .columns-mosaic-text h2 {
+  margin: 0 0 16px;
+}
+
+.columns-mosaic .columns-mosaic-text p {
+  margin: 0 0 16px;
+}
+
+.columns-mosaic .columns-mosaic-text p.columns-mosaic-link {
+  margin: 8px 0 0;
+}
+
+@media (width >= 768px) {
+  .columns-mosaic .columns-mosaic-grid {
+    flex-direction: row;
+  }
+
+  .columns-mosaic .columns-mosaic-text {
+    padding: 48px;
+  }
+}
