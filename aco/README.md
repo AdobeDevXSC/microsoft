@@ -14,7 +14,7 @@ This folder is excluded from the EDS site via `.hlxignore`.
 | `data/categories.json` | Category tree: `xbox/accessories/controllers`, `surface/{laptops,2-in-1,business}`, `deals/black-friday` |
 | `data/products.json` | Products |
 | `data/pricebooks.json` | Price books (`main`, USD) |
-| `data/prices.json` | Prices per SKU per price book; sale prices are `discounts` (`price` is the amount off) |
+| `data/prices.json` | Prices per SKU per price book; sale prices are `discounts` (`price` is the final sale price, despite the SDK docs saying "amount off") |
 
 ### Black Friday deals
 

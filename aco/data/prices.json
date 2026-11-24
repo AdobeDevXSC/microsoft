@@ -11,7 +11,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 300.0
+        "price": 1199.99
       }
     ]
   },
@@ -22,7 +22,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 400.0
+        "price": 1199.99
       }
     ]
   },
@@ -33,7 +33,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 407.32
+        "price": 1292.67
       }
     ]
   },
@@ -64,7 +64,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 100.0
+        "price": 849.99
       }
     ]
   },
@@ -80,7 +80,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 15.93
+        "price": 49.06
       }
     ]
   },
@@ -91,7 +91,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 20.77
+        "price": 59.22
       }
     ]
   },
@@ -102,7 +102,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 38.25
+        "price": 111.74
       }
     ]
   },
@@ -113,7 +113,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 32.0
+        "price": 167.99
       }
     ]
   },
@@ -124,7 +124,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 13.42
+        "price": 51.57
       }
     ]
   },
@@ -135,7 +135,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 17.69
+        "price": 52.3
       }
     ]
   },
@@ -146,7 +146,7 @@
     "discounts": [
       {
         "code": "black_friday_2026",
-        "price": 17.69
+        "price": 52.3
       }
     ]
   }
