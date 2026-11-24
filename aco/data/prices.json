@@ -3,5 +3,151 @@
     "sku": "xbox-nano-controller",
     "priceBookId": "main",
     "regular": 49.99
+  },
+  {
+    "sku": "surface-pro-13-inch-12th-edition",
+    "priceBookId": "main",
+    "regular": 1499.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 1199.99
+      }
+    ]
+  },
+  {
+    "sku": "surface-laptop-13-8-inch-8th-edition",
+    "priceBookId": "main",
+    "regular": 1599.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 1199.99
+      }
+    ]
+  },
+  {
+    "sku": "surface-laptop-15-inch-8th-edition",
+    "priceBookId": "main",
+    "regular": 1699.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 1292.67
+      }
+    ]
+  },
+  {
+    "sku": "surface-laptop-ultra",
+    "priceBookId": "main",
+    "regular": 2599.99
+  },
+  {
+    "sku": "surface-laptop-for-business-7th-edition-intel",
+    "priceBookId": "main",
+    "regular": 1387.49
+  },
+  {
+    "sku": "surface-pro-for-business-11th-edition-snapdragon",
+    "priceBookId": "main",
+    "regular": 1394.99
+  },
+  {
+    "sku": "surface-pro-12-inch-1st-edition",
+    "priceBookId": "main",
+    "regular": 849.99
+  },
+  {
+    "sku": "surface-laptop-13-inch-1st-edition",
+    "priceBookId": "main",
+    "regular": 949.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 849.99
+      }
+    ]
+  },
+  {
+    "sku": "surface-pro-12-inch-2nd-edition",
+    "priceBookId": "main",
+    "regular": 1149.99
+  },
+  {
+    "sku": "xbox-wireless-controller",
+    "priceBookId": "main",
+    "regular": 64.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 49.06
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller-breaker-special-edition",
+    "priceBookId": "main",
+    "regular": 79.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 59.22
+      }
+    ]
+  },
+  {
+    "sku": "xbox-elite-wireless-controller-series-2-core",
+    "priceBookId": "main",
+    "regular": 149.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 111.74
+      }
+    ]
+  },
+  {
+    "sku": "xbox-elite-wireless-controller-series-2",
+    "priceBookId": "main",
+    "regular": 199.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 167.99
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller-plus-usb-c-cable",
+    "priceBookId": "main",
+    "regular": 64.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 51.57
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller-daystrike-camo-special-edition",
+    "priceBookId": "main",
+    "regular": 69.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 52.3
+      }
+    ]
+  },
+  {
+    "sku": "xbox-wireless-controller-arctic-camo-special-edition",
+    "priceBookId": "main",
+    "regular": 69.99,
+    "discounts": [
+      {
+        "code": "black_friday_2026",
+        "price": 52.3
+      }
+    ]
   }
 ]

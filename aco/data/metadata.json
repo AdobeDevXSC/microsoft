@@ -299,6 +299,157 @@
     "searchTypes": []
   },
   {
+    "code": "black_friday_deal",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Black Friday Deal",
+    "dataType": "BOOLEAN",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "deal_description",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Deal",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "processor",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Processor",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": true,
+    "searchWeight": 1,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "memory",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Memory",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "storage",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Storage",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "color",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Color",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": true,
+    "searchWeight": 1,
+    "searchTypes": [
+      "AUTOCOMPLETE"
+    ]
+  },
+  {
+    "code": "display_size",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Display Size",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL",
+      "PRODUCT_LISTING",
+      "SEARCH_RESULTS",
+      "PRODUCT_COMPARE"
+    ],
+    "filterable": true,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
+    "code": "configuration_options",
+    "source": {
+      "locale": "en-US"
+    },
+    "label": "Configuration Options",
+    "dataType": "TEXT",
+    "visibleIn": [
+      "PRODUCT_DETAIL"
+    ],
+    "filterable": false,
+    "sortable": false,
+    "searchable": false,
+    "searchWeight": 1,
+    "searchTypes": []
+  },
+  {
     "code": "price",
     "source": {
       "locale": "en-US"
